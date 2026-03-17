@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Catálogo de Tecnologias Regenerativas</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-green-50 min-h-screen flex flex-col items-center p-10">
+
+<h1 class="text-4xl font-bold text-green-800 mb-6 text-center">
+Catálogo de Tecnologias Regenerativas
+</h1>
+
+<p id="sectionTitle" class="text-lg text-green-700 mb-8 font-semibold"></p>
+
+<div class="flex items-center gap-6">
+
+<button onclick="prevPage()" 
+class="text-3xl bg-white shadow-lg w-14 h-14 rounded-full hover:bg-green-100 transition">
+←
+</button>
+
+<div id="page" 
+class="bg-white rounded-xl shadow-xl p-10 flex gap-10 transition-all duration-500">
+</div>
+
+<button onclick="nextPage()" 
+class="text-3xl bg-white shadow-lg w-14 h-14 rounded-full hover:bg-green-100 transition">
+→
+</button>
+
+</div>
+
+<script>
+
+const sections = [
+
+{
+section:"Energia Regenerativa",
+items:[
+{title:"Sistema Fotovoltaico Off Grid",img:"https://source.unsplash.com/600x400/?solar,panels",desc:"Geração solar para autonomia energética.",details:"Painéis solares com baterias.",dim:"Variável",material:"Silício e alumínio"},
+{title:"Biodigestor Rural",img:"https://source.unsplash.com/600x400/?biogas,plant",desc:"Produção de biogás e fertilizante.",details:"Sistema anaeróbico.",dim:"200 x 150 x 150 cm",material:"Polietileno"},
+{title:"Micro Turbina Hidrelétrica",img:"https://source.unsplash.com/600x400/?hydro,turbine",desc:"Energia em pequenos cursos d’água.",details:"Turbina de baixa queda.",dim:"120 x 80 x 80 cm",material:"Aço inox"},
+{title:"Gerador a Biomassa",img:"https://source.unsplash.com/600x400/?biomass,energy",desc:"Conversão de biomassa em energia.",details:"Sistema térmico.",dim:"250 x 180 x 200 cm",material:"Aço industrial"},
+{title:"Estação Solar de Irrigação",img:"https://source.unsplash.com/600x400/?solar,irrigation",desc:"Bombeamento solar de água.",details:"Integra energia e irrigação.",dim:"Variável",material:"Aço"},
+{title:"Carregador Solar Comunitário",img:"https://source.unsplash.com/600x400/?solar,charging",desc:"Estação solar para equipamentos.",details:"Uso comunitário.",dim:"120 x 120 x 200 cm",material:"Metal"},
+{title:"Mini Usina Solar Rural",img:"https://source.unsplash.com/600x400/?solar,farm",desc:"Produção energética local.",details:"Micro geração.",dim:"Variável",material:"Painéis solares"},
+{title:"Sistema Híbrido Solar/Eólico",img:"https://source.unsplash.com/600x400/?wind,solar",desc:"Integra energia solar e eólica.",details:"Alta resiliência.",dim:"Variável",material:"Aço"},
+{title:"Banco de Baterias",img:"https://source.unsplash.com/600x400/?battery,energy",desc:"Armazenamento energético.",details:"Sistema de baterias.",dim:"200 x 100 x 180 cm",material:"Eletrônica"},
+{title:"Monitoramento Energético",img:"https://source.unsplash.com/600x400/?energy,monitoring",desc:"Monitoramento de geração.",details:"Sistema IoT.",dim:"40 x 30 x 20 cm",material:"Eletrônica"}
+]
+},
+
+{
+section:"Solo e Fertilidade",
+items:[
+{title:"Triturador de Biomassa",img:"https://source.unsplash.com/600x400/?wood,chipper",desc:"Produz mulch e matéria orgânica.",details:"Triturador agrícola.",dim:"140 x 90 x 120 cm",material:"Aço"},
+{title:"Composteira Termofílica",img:"https://source.unsplash.com/600x400/?compost",desc:"Transforma resíduos em adubo.",details:"Alta temperatura.",dim:"100 x 100 x 100 cm",material:"Madeira"},
+{title:"Biofábrica de Microorganismos",img:"https://source.unsplash.com/600x400/?laboratory,biotech",desc:"Produção de biofertilizantes.",details:"Agricultura regenerativa.",dim:"80 x 60 x 100 cm",material:"Tanques"},
+{title:"Triturador de Galhos",img:"https://source.unsplash.com/600x400/?tree,chipper",desc:"Reciclagem de galhos.",details:"Produção de biomassa.",dim:"150 x 90 x 120 cm",material:"Aço"},
+{title:"Distribuidor de Composto",img:"https://source.unsplash.com/600x400/?fertilizer,spreader",desc:"Aplicação uniforme de composto.",details:"Equipamento agrícola.",dim:"Variável",material:"Metal"},
+{title:"Biochar Reactor",img:"https://source.unsplash.com/600x400/?biochar",desc:"Produção de carvão vegetal agrícola.",details:"Pirólise controlada.",dim:"120 x 120 x 150 cm",material:"Aço"},
+{title:"Sistema de Cobertura Viva",img:"https://source.unsplash.com/600x400/?soil,plants",desc:"Plantas de cobertura.",details:"Proteção do solo.",dim:"Variável",material:"Vegetal"},
+{title:"Sensor de Umidade do Solo",img:"https://source.unsplash.com/600x400/?soil,sensor",desc:"Monitoramento agrícola.",details:"IoT rural.",dim:"20 x 10 cm",material:"Eletrônica"},
+{title:"Subsolador Agrícola",img:"https://source.unsplash.com/600x400/?tractor,soil",desc:"Descompactação do solo.",details:"Equipamento agrícola.",dim:"Variável",material:"Aço"},
+{title:"Sistema de Adubação Verde",img:"https://source.unsplash.com/600x400/?green,manure",desc:"Cultivo regenerativo.",details:"Recuperação de nutrientes.",dim:"Variável",material:"Vegetal"}
+]
+},
+
+{
+section:"Biodiversidade",
+items:[
+{title:"Caixa de Abelhas Nativas",img:"https://source.unsplash.com/600x400/?beehive",desc:"Meliponicultura.",details:"Polinização natural.",dim:"40 x 30 x 30 cm",material:"Madeira"},
+{title:"Hotel de Insetos",img:"https://source.unsplash.com/600x400/?insect,hotel",desc:"Abrigo para polinizadores.",details:"Biodiversidade.",dim:"60 x 40 x 20 cm",material:"Madeira"},
+{title:"Viveiro Agroflorestal",img:"https://source.unsplash.com/600x400/?tree,nursery",desc:"Produção de mudas.",details:"Reflorestamento.",dim:"Variável",material:"Metal"},
+{title:"Banco de Sementes",img:"https://source.unsplash.com/600x400/?seeds",desc:"Conservação genética.",details:"Armazenamento.",dim:"Variável",material:"Vidro"},
+{title:"Jardim de Polinizadores",img:"https://source.unsplash.com/600x400/?pollinator,garden",desc:"Atração de insetos benéficos.",details:"Flora nativa.",dim:"Variável",material:"Vegetal"},
+{title:"Corredor Ecológico",img:"https://source.unsplash.com/600x400/?forest,path",desc:"Conectividade ecológica.",details:"Fauna e flora.",dim:"Variável",material:"Natural"},
+{title:"Sistema de Birdhouses",img:"https://source.unsplash.com/600x400/?birdhouse",desc:"Abrigo para aves.",details:"Biodiversidade.",dim:"30 x 20 x 20 cm",material:"Madeira"},
+{title:"Lago de Biodiversidade",img:"https://source.unsplash.com/600x400/?pond,nature",desc:"Habitat para fauna.",details:"Ecossistema aquático.",dim:"Variável",material:"Natural"},
+{title:"Área de Refúgio Faunístico",img:"https://source.unsplash.com/600x400/?wildlife,forest",desc:"Proteção de fauna.",details:"Área natural.",dim:"Variável",material:"Natural"},
+{title:"Trilha Interpretativa",img:"https://source.unsplash.com/600x400/?nature,trail",desc:"Educação ambiental.",details:"Infraestrutura ecológica.",dim:"Variável",material:"Madeira"}
+]
+},
+
+{
+section:"Economia Circular",
+items:[
+{title:"Trituradora de Plástico",img:"https://source.unsplash.com/600x400/?plastic,recycling",desc:"Triturador industrial.",details:"Primeira etapa da reciclagem.",dim:"120 x 100 x 150 cm",material:"Aço"},
+{title:"Lavadora de Plástico",img:"https://source.unsplash.com/600x400/?plastic,washing",desc:"Limpeza de resíduos.",details:"Preparação para reciclagem.",dim:"200 x 120 x 160 cm",material:"Aço inox"},
+{title:"Secador de Plástico",img:"https://source.unsplash.com/600x400/?industrial,dryer",desc:"Secagem de flocos.",details:"Preparação para extrusão.",dim:"180 x 120 x 150 cm",material:"Aço"},
+{title:"Granulador de Plástico",img:"https://source.unsplash.com/600x400/?plastic,pellets",desc:"Produção de pellets.",details:"Reciclagem avançada.",dim:"200 x 150 x 180 cm",material:"Aço"},
+{title:"Separador de Materiais",img:"https://source.unsplash.com/600x400/?recycling,sorting",desc:"Separação automática.",details:"Esteiras e sensores.",dim:"Variável",material:"Metal"},
+{title:"Compactadora de Resíduos",img:"https://source.unsplash.com/600x400/?waste,compactor",desc:"Redução de volume.",details:"Logística de resíduos.",dim:"200 x 200 x 200 cm",material:"Aço"},
+{title:"Prensa de Recicláveis",img:"https://source.unsplash.com/600x400/?recycling,press",desc:"Compactação de recicláveis.",details:"Papel e plástico.",dim:"180 x 140 x 160 cm",material:"Aço"},
+{title:"Esteira de Triagem",img:"https://source.unsplash.com/600x400/?factory,conveyor",desc:"Separação manual.",details:"Linha de reciclagem.",dim:"Variável",material:"Metal"},
+{title:"Sistema de Coleta Seletiva",img:"https://source.unsplash.com/600x400/?recycling,bins",desc:"Infraestrutura urbana.",details:"Gestão de resíduos.",dim:"Variável",material:"Plástico"},
+{title:"Triturador de Vidro",img:"https://source.unsplash.com/600x400/?glass,recycling",desc:"Reciclagem de vidro.",details:"Triturador industrial.",dim:"150 x 120 x 140 cm",material:"Aço"}
+]
+}
+
+]
+
+let pages=[]
+let page=0
+
+function generatePages(){
+
+sections.forEach(section=>{
+for(let i=0;i<section.items.length;i+=2){
+pages.push({
+section:section.section,
+items:[section.items[i],section.items[i+1]]
+})
+}
+})
+
+}
+
+generatePages()
+
+function render(){
+
+const container=document.getElementById("page")
+const title=document.getElementById("sectionTitle")
+
+container.innerHTML=""
+title.innerText=pages[page].section
+
+pages[page].items.forEach(p=>{
+
+container.innerHTML+=`
+<div class="w-80 flex flex-col">
+
+<img src="${p.img}" class="rounded-lg shadow-md mb-4 h-48 object-cover">
+
+<h2 class="text-xl font-semibold text-green-800">${p.title}</h2>
+
+<p class="text-gray-600 mt-2">${p.desc}</p>
+
+<div class="text-sm text-gray-500 mt-3">
+
+<p><b>Detalhes:</b> ${p.details}</p>
+<p><b>Dimensões:</b> ${p.dim}</p>
+<p><b>Material:</b> ${p.material}</p>
+
+</div>
+
+<p class="text-green-700 font-bold mt-4">Valor: Sob consulta</p>
+
+</div>
+`
+})
+
+}
+
+function nextPage(){
+if(page<pages.length-1){page++;render()}
+}
+
+function prevPage(){
+if(page>0){page--;render()}
+}
+
+render()
+
+</script>
+
+</body>
+</html>
