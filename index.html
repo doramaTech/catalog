@@ -2,172 +2,290 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Catálogo de Tecnologias Regenerativas</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
+<title>Silvia Gilwanová</title>
+
+<style>
+body { margin:0; font-family: Arial; }
+
+/* TOPO */
+.topbar {
+  position: fixed;
+  top:0;
+  width:100%;
+  background:#fff;
+  text-align:center;
+  padding:25px;
+  font-size:34px;
+  font-family:'Playfair Display', serif;
+  border-bottom:1px solid #eee;
+  z-index:1000;
+}
+
+/* HERO */
+.hero-intro {
+  padding-top:140px;
+  padding-bottom:50px;
+  text-align:center;
+}
+
+.hero-text {
+  font-family:'Playfair Display', serif;
+  font-size:24px;
+  line-height:1.6;
+  margin-bottom:50px;
+}
+
+.hero-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  padding:0 30px;
+}
+
+.hero-item {
+  position:relative;
+  height:280px;
+  overflow:hidden;
+  display:block;
+}
+
+.hero-item img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform 0.6s;
+}
+
+.hero-item .overlay {
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:20px;
+  font-family:'Playfair Display', serif;
+  font-size:20px;
+  opacity:0;
+  transition:0.4s;
+}
+
+.hero-item:hover img { transform:scale(1.08); }
+.hero-item:hover .overlay { opacity:1; }
+
+/* SIDEBAR */
+.sidebar {
+  position:fixed;
+  top:100px;
+  left:0;
+  width:230px;
+  height:100%;
+  padding:20px;
+  border-right:1px solid #eee;
+}
+
+.sidebar a {
+  display:block;
+  margin:12px 0;
+  text-decoration:none;
+  color:#111;
+  font-size:13px;
+}
+
+/* MAIN */
+.main {
+  margin-left:250px;
+}
+
+/* SEÇÕES */
+.section { padding:70px 30px; }
+
+.section-content {
+  display:flex;
+  gap:30px;
+}
+
+.reverse { flex-direction:row-reverse; }
+
+.text { width:35%; }
+
+.text h1 {
+  font-family:'Playfair Display', serif;
+  font-size:26px;
+}
+
+.text h2 {
+  font-size:14px;
+  color:#666;
+}
+
+.gallery {
+  width:65%;
+  column-count:2;
+  column-gap:10px;
+}
+
+.item { break-inside:avoid; margin-bottom:10px; }
+
+.item img { width:100%; border-radius:4px; }
+
+figcaption { font-size:12px; color:#555; margin-top:5px; }
+
+/* CONTATO */
+.contact-box {
+  background:#f5f5f5;
+  padding:20px;
+  margin:40px 30px;
+  border-radius:6px;
+}
+
+/* FOOTER */
+.footer {
+  text-align:center;
+  font-size:12px;
+  padding:30px;
+  color:#555;
+}
+
+/* WHATS */
+.whatsapp {
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  background:#25D366;
+  color:white;
+  padding:12px 16px;
+  border-radius:50px;
+  text-decoration:none;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .sidebar{display:none;}
+  .main{margin:0;}
+  .section-content{flex-direction:column;}
+  .text,.gallery{width:100%;}
+  .gallery{column-count:1;}
+  .hero-grid{grid-template-columns:1fr;}
+  .hero-item{height:220px;}
+}
+</style>
 </head>
 
-<body class="bg-green-50 min-h-screen flex flex-col items-center p-10">
+<body>
 
-<h1 class="text-4xl font-bold text-green-800 mb-6 text-center">
-Catálogo de Tecnologias Regenerativas
-</h1>
+<div class="topbar">Silvia Gilwanová</div>
 
-<p id="sectionTitle" class="text-lg text-green-700 mb-8 font-semibold"></p>
+<!-- HERO INSERIDO AQUI -->
+<section class="hero-intro">
+  <div class="hero-text">
+    Te convido a conhecer o meu Trabalho!<br>
+    Seja muito bem vindo!
+  </div>
 
-<div class="flex items-center gap-6">
+  <div class="hero-grid">
+    <a href="#s6" class="hero-item">
+      <img src="https://picsum.photos/600/600?1">
+      <div class="overlay">Artista 2026</div>
+    </a>
 
-<button onclick="prevPage()" 
-class="text-3xl bg-white shadow-lg w-14 h-14 rounded-full hover:bg-green-100 transition">
-←
-</button>
+    <a href="#s1" class="hero-item">
+      <img src="https://picsum.photos/600/600?2">
+      <div class="overlay">
+        Ilustrações e Pinturas<br>O Feminino e Natureza
+      </div>
+    </a>
 
-<div id="page" 
-class="bg-white rounded-xl shadow-xl p-10 flex gap-10 transition-all duration-500">
+    <a href="#s5" class="hero-item">
+      <img src="https://picsum.photos/600/600?3">
+      <div class="overlay">As Iniciações Femininas</div>
+    </a>
+
+    <a href="#s2" class="hero-item">
+      <img src="https://picsum.photos/600/600?4">
+      <div class="overlay">Indígenas Sementes de Sol</div>
+    </a>
+  </div>
+</section>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <a href="#s1">Ilustrações e Pinturas</a>
+  <a href="#s2">Indígenas Sementes de Sol</a>
+  <a href="#s3">Natureza</a>
+  <a href="#s4">Feminino</a>
+  <a href="#s5">Livro</a>
+  <a href="#s6">A Artista</a>
 </div>
 
-<button onclick="nextPage()" 
-class="text-3xl bg-white shadow-lg w-14 h-14 rounded-full hover:bg-green-100 transition">
-→
-</button>
+<div class="main">
 
+<!-- SEÇÕES (mantidas como estavam) -->
+<section id="s1" class="section">
+<div class="section-content">
+<div class="text">
+<h1>Ilustrações e Pinturas</h1>
+<h2>O Feminino e a Terra</h2>
+<p>Expressões visuais que conectam corpo e natureza.</p>
 </div>
+<div class="gallery">
+<div class="item"><figure><img src="https://picsum.photos/400/600"><figcaption>Obra</figcaption></figure></div>
+</div>
+</div>
+</section>
 
-<script>
+<section id="s2" class="section">
+<div class="section-content reverse">
+<div class="text">
+<h1>Indígenas Sementes de Sol</h1>
+<h2>Representação da ancestralidade</h2>
+</div>
+<div class="gallery">
+<div class="item"><figure><img src="https://picsum.photos/400/550"><figcaption>Obra</figcaption></figure></div>
+</div>
+</div>
+</section>
 
-const sections = [
+<section id="s5" class="section">
+<div class="section-content">
+<div class="text">
+<h1>A Iniciação Feminina</h1>
+<h2>Livro artístico</h2>
+</div>
+</div>
+</section>
 
-{
-section:"Energia Regenerativa",
-items:[
-{title:"Sistema Fotovoltaico Off Grid",img:"https://source.unsplash.com/600x400/?solar,panels",desc:"Geração solar para autonomia energética.",details:"Painéis solares com baterias.",dim:"Variável",material:"Silício e alumínio"},
-{title:"Biodigestor Rural",img:"https://source.unsplash.com/600x400/?biogas,plant",desc:"Produção de biogás e fertilizante.",details:"Sistema anaeróbico.",dim:"200 x 150 x 150 cm",material:"Polietileno"},
-{title:"Micro Turbina Hidrelétrica",img:"https://source.unsplash.com/600x400/?hydro,turbine",desc:"Energia em pequenos cursos d’água.",details:"Turbina de baixa queda.",dim:"120 x 80 x 80 cm",material:"Aço inox"},
-{title:"Gerador a Biomassa",img:"https://source.unsplash.com/600x400/?biomass,energy",desc:"Conversão de biomassa em energia.",details:"Sistema térmico.",dim:"250 x 180 x 200 cm",material:"Aço industrial"},
-{title:"Estação Solar de Irrigação",img:"https://source.unsplash.com/600x400/?solar,irrigation",desc:"Bombeamento solar de água.",details:"Integra energia e irrigação.",dim:"Variável",material:"Aço"},
-{title:"Carregador Solar Comunitário",img:"https://source.unsplash.com/600x400/?solar,charging",desc:"Estação solar para equipamentos.",details:"Uso comunitário.",dim:"120 x 120 x 200 cm",material:"Metal"},
-{title:"Mini Usina Solar Rural",img:"https://source.unsplash.com/600x400/?solar,farm",desc:"Produção energética local.",details:"Micro geração.",dim:"Variável",material:"Painéis solares"},
-{title:"Sistema Híbrido Solar/Eólico",img:"https://source.unsplash.com/600x400/?wind,solar",desc:"Integra energia solar e eólica.",details:"Alta resiliência.",dim:"Variável",material:"Aço"},
-{title:"Banco de Baterias",img:"https://source.unsplash.com/600x400/?battery,energy",desc:"Armazenamento energético.",details:"Sistema de baterias.",dim:"200 x 100 x 180 cm",material:"Eletrônica"},
-{title:"Monitoramento Energético",img:"https://source.unsplash.com/600x400/?energy,monitoring",desc:"Monitoramento de geração.",details:"Sistema IoT.",dim:"40 x 30 x 20 cm",material:"Eletrônica"}
-]
-},
+<section id="s6" class="section">
+<div class="section-content reverse">
+<div class="text">
+<h1>A Artista</h1>
+<h2>Sobre Silvia Gilwanová</h2>
+</div>
+</div>
+</section>
 
-{
-section:"Solo e Fertilidade",
-items:[
-{title:"Triturador de Biomassa",img:"https://portuguese.alibaba.com/g/biomass-pallet-making-machine.html",desc:"Produz mulch e matéria orgânica.",details:"Triturador agrícola.",dim:"140 x 90 x 120 cm",material:"Aço"},
-{title:"Composteira Termofílica",img:"https://www.google.com/imgres?q=composteira%20artesanal&imgurl=https%3A%2F%2Fwww.lojaecoly.com.br%2Fwp-content%2Fuploads%2F2021%2F09%2FIMG-20220404-WA0112.jpg&imgrefurl=https%3A%2F%2Fwww.lojaecoly.com.br%2Fproduct%2Fcomposteira-de-madeira%2F&docid=xFjfUrLWugYS2M&tbnid=G-AjmDKSqNqjMM&vet=12ahUKEwix_bjH26WTAxWapZUCHWc8M70QnPAOegQIbhAB..i&w=1181&h=1181&hcb=2&ved=2ahUKEwix_bjH26WTAxWapZUCHWc8M70QnPAOegQIbhAB",desc:"Transforma resíduos em adubo.",details:"Alta temperatura.",dim:"100 x 100 x 100 cm",material:"Madeira"},
-{title:"Biofábrica de Microorganismos",img:"https://www.google.com/imgres?q=biofabrica%20de%20mircoorganismos&imgurl=https%3A%2F%2Fc4cientifica.com.br%2Fwp-content%2Fuploads%2F2024%2F12%2F9BB916EE-7267-42D1-8BFD-17DB0DE120BA_1_105_c-1-768x554.jpeg&imgrefurl=https%3A%2F%2Fc4cientifica.com.br%2Fbiofabricas-de-microrganismos%2F&docid=qMPNmaG7iqhPSM&tbnid=vubjXWqnbvJY7M&vet=12ahUKEwjKt4L026WTAxXmqJUCHYNHGygQnPAOegQIEhAB..i&w=768&h=554&hcb=2&ved=2ahUKEwjKt4L026WTAxXmqJUCHYNHGygQnPAOegQIEhAB",desc:"Produção de biofertilizantes.",details:"Agricultura regenerativa.",dim:"80 x 60 x 100 cm",material:"Tanques"},
-{title:"Triturador de Galhos",img:"https://www.google.com/aclk?sa=L&ai=DChsSEwiBp-SG3KWTAxXma0gAHcrHLOoYACICCAEQBRoCY2U&co=1&ase=2&gclid=CjwKCAjw1N7NBhAoEiwAcPchp-QdSeA2gzTvUvtuTzgkebCgfIjYOm8k-vJz4K1lTiwwddoYoT_bExoCRMoQAvD_BwE&cid=CAAS9gHkaJx6nhZVK6-2mLvaMh2Ad2NBhC7NXq-oYzeKow9cZX8SciLatctA56TTSmGiUQoAVgTkKBgqi9hCVhxKPEnYOH2qKjMn3Pl1QHarlLQfqhAL_2jtxdJoc2hq79L3GbYgSGLggctfueWCy6Io6UQI0BbbpBhEDdzU58xpGQVu25frlxAx1G_0_G9iCLAkXEH9PwRhw66jcSzdbCqt4ja98AsOKb-9jeX8ZlOV_VvzdzeJBiO9lGPtRZ4pFWkduBeL1u17G17DbatT4AcVVxYXqG0qB4s9K2c9EOv3mxlUdLNiTjqV50Dj6MAVy6uJ5ITnzVHi13U&cce=2&category=acrcp_v1_32&sig=AOD64_1_wEn7eyauSz_TShZS4dqRPUJ4Lg&ctype=5&q=&nis=4&ved=2ahUKEwiQwuCG3KWTAxVws5UCHZJ4OdcQ9aACKAB6BAgJECM&adurl=",desc:"Reciclagem de galhos.",details:"Produção de biomassa.",dim:"150 x 90 x 120 cm",material:"Aço"},
-{title:"Distribuidor de Composto",img:"https://www.google.com/imgres?q=distribuidor%20de%20composto&imgurl=https%3A%2F%2Fjobemaq.com.br%2Fwp-content%2Fuploads%2F2024%2F04%2FDistribuitor-site-1.png&imgrefurl=https%3A%2F%2Fjobemaq.com.br%2Fproduto%2Fdistribuidor-de-adubo-para-trator%2F&docid=VTTIaef4nrnlHM&tbnid=RNwAfjU6eygLsM&vet=12ahUKEwiAseiX3KWTAxUDqJUCHcV0D6kQnPAOegQIHBAB..i&w=1600&h=1204&hcb=2&ved=2ahUKEwiAseiX3KWTAxUDqJUCHcV0D6kQnPAOegQIHBAB",desc:"Aplicação uniforme de composto.",details:"Equipamento agrícola.",dim:"Variável",material:"Metal"},
-{title:"Biochar Reactor",img:"https://source.unsplash.com/600x400/?biochar",desc:"Produção de carvão vegetal agrícola.",details:"Pirólise controlada.",dim:"120 x 120 x 150 cm",material:"Aço"},
-{title:"Sistema de Cobertura Viva",img:"https://source.unsplash.com/600x400/?soil,plants",desc:"Plantas de cobertura.",details:"Proteção do solo.",dim:"Variável",material:"Vegetal"},
-{title:"Sensor de Umidade do Solo",img:"https://source.unsplash.com/600x400/?soil,sensor",desc:"Monitoramento agrícola.",details:"IoT rural.",dim:"20 x 10 cm",material:"Eletrônica"},
-{title:"Subsolador Agrícola",img:"https://source.unsplash.com/600x400/?tractor,soil",desc:"Descompactação do solo.",details:"Equipamento agrícola.",dim:"Variável",material:"Aço"},
-{title:"Sistema de Adubação Verde",img:"https://source.unsplash.com/600x400/?green,manure",desc:"Cultivo regenerativo.",details:"Recuperação de nutrientes.",dim:"Variável",material:"Vegetal"}
-]
-},
-
-{
-section:"Biodiversidade",
-items:[
-{title:"Caixa de Abelhas Nativas",img:"https://source.unsplash.com/600x400/?beehive",desc:"Meliponicultura.",details:"Polinização natural.",dim:"40 x 30 x 30 cm",material:"Madeira"},
-{title:"Hotel de Insetos",img:"https://source.unsplash.com/600x400/?insect,hotel",desc:"Abrigo para polinizadores.",details:"Biodiversidade.",dim:"60 x 40 x 20 cm",material:"Madeira"},
-{title:"Viveiro Agroflorestal",img:"https://source.unsplash.com/600x400/?tree,nursery",desc:"Produção de mudas.",details:"Reflorestamento.",dim:"Variável",material:"Metal"},
-{title:"Banco de Sementes",img:"https://source.unsplash.com/600x400/?seeds",desc:"Conservação genética.",details:"Armazenamento.",dim:"Variável",material:"Vidro"},
-{title:"Jardim de Polinizadores",img:"https://source.unsplash.com/600x400/?pollinator,garden",desc:"Atração de insetos benéficos.",details:"Flora nativa.",dim:"Variável",material:"Vegetal"},
-{title:"Corredor Ecológico",img:"https://source.unsplash.com/600x400/?forest,path",desc:"Conectividade ecológica.",details:"Fauna e flora.",dim:"Variável",material:"Natural"},
-{title:"Sistema de Birdhouses",img:"https://source.unsplash.com/600x400/?birdhouse",desc:"Abrigo para aves.",details:"Biodiversidade.",dim:"30 x 20 x 20 cm",material:"Madeira"},
-{title:"Lago de Biodiversidade",img:"https://source.unsplash.com/600x400/?pond,nature",desc:"Habitat para fauna.",details:"Ecossistema aquático.",dim:"Variável",material:"Natural"},
-{title:"Área de Refúgio Faunístico",img:"https://source.unsplash.com/600x400/?wildlife,forest",desc:"Proteção de fauna.",details:"Área natural.",dim:"Variável",material:"Natural"},
-{title:"Trilha Interpretativa",img:"https://source.unsplash.com/600x400/?nature,trail",desc:"Educação ambiental.",details:"Infraestrutura ecológica.",dim:"Variável",material:"Madeira"}
-]
-},
-
-{
-section:"Economia Circular",
-items:[
-{title:"Trituradora de Plástico",img:"https://source.unsplash.com/600x400/?plastic,recycling",desc:"Triturador industrial.",details:"Primeira etapa da reciclagem.",dim:"120 x 100 x 150 cm",material:"Aço"},
-{title:"Lavadora de Plástico",img:"https://source.unsplash.com/600x400/?plastic,washing",desc:"Limpeza de resíduos.",details:"Preparação para reciclagem.",dim:"200 x 120 x 160 cm",material:"Aço inox"},
-{title:"Secador de Plástico",img:"https://source.unsplash.com/600x400/?industrial,dryer",desc:"Secagem de flocos.",details:"Preparação para extrusão.",dim:"180 x 120 x 150 cm",material:"Aço"},
-{title:"Granulador de Plástico",img:"https://source.unsplash.com/600x400/?plastic,pellets",desc:"Produção de pellets.",details:"Reciclagem avançada.",dim:"200 x 150 x 180 cm",material:"Aço"},
-{title:"Separador de Materiais",img:"https://source.unsplash.com/600x400/?recycling,sorting",desc:"Separação automática.",details:"Esteiras e sensores.",dim:"Variável",material:"Metal"},
-{title:"Compactadora de Resíduos",img:"https://source.unsplash.com/600x400/?waste,compactor",desc:"Redução de volume.",details:"Logística de resíduos.",dim:"200 x 200 x 200 cm",material:"Aço"},
-{title:"Prensa de Recicláveis",img:"https://source.unsplash.com/600x400/?recycling,press",desc:"Compactação de recicláveis.",details:"Papel e plástico.",dim:"180 x 140 x 160 cm",material:"Aço"},
-{title:"Esteira de Triagem",img:"https://source.unsplash.com/600x400/?factory,conveyor",desc:"Separação manual.",details:"Linha de reciclagem.",dim:"Variável",material:"Metal"},
-{title:"Sistema de Coleta Seletiva",img:"https://source.unsplash.com/600x400/?recycling,bins",desc:"Infraestrutura urbana.",details:"Gestão de resíduos.",dim:"Variável",material:"Plástico"},
-{title:"Triturador de Vidro",img:"https://source.unsplash.com/600x400/?glass,recycling",desc:"Reciclagem de vidro.",details:"Triturador industrial.",dim:"150 x 120 x 140 cm",material:"Aço"}
-]
-}
-
-]
-
-let pages=[]
-let page=0
-
-function generatePages(){
-
-sections.forEach(section=>{
-for(let i=0;i<section.items.length;i+=2){
-pages.push({
-section:section.section,
-items:[section.items[i],section.items[i+1]]
-})
-}
-})
-
-}
-
-generatePages()
-
-function render(){
-
-const container=document.getElementById("page")
-const title=document.getElementById("sectionTitle")
-
-container.innerHTML=""
-title.innerText=pages[page].section
-
-pages[page].items.forEach(p=>{
-
-container.innerHTML+=`
-<div class="w-80 flex flex-col">
-
-<img src="${p.img}" class="rounded-lg shadow-md mb-4 h-48 object-cover">
-
-<h2 class="text-xl font-semibold text-green-800">${p.title}</h2>
-
-<p class="text-gray-600 mt-2">${p.desc}</p>
-
-<div class="text-sm text-gray-500 mt-3">
-
-<p><b>Detalhes:</b> ${p.details}</p>
-<p><b>Dimensões:</b> ${p.dim}</p>
-<p><b>Material:</b> ${p.material}</p>
+<div class="contact-box">
+<strong>Entre em Contato</strong><br><br>
+WhatsApp: (11) 97037-4811<br>
+E-mail: silviagilwan.art@gmail.com<br>
+Local: Ateliê Casa Hateva, Mogi das Cruzes, SP
+</div>
 
 </div>
 
-<p class="text-green-700 font-bold mt-4">Valor: Sob consulta</p>
+<a class="whatsapp" href="https://wa.me/5511970374811">WhatsApp</a>
 
+<div class="footer">
+Todos os direitos reservados Casa Hateva<br><br>
+2026 Escola Hateva de Artes. Todos os direitos reservados - 
+Artista Silvia Gilwanová - escolahateva.art.br
 </div>
-`
-})
-
-}
-
-function nextPage(){
-if(page<pages.length-1){page++;render()}
-}
-
-function prevPage(){
-if(page>0){page--;render()}
-}
-
-render()
-
-</script>
 
 </body>
 </html>
