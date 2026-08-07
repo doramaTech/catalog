@@ -1,390 +1,693 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2dM – Catálogo de Protótipos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>2dM — Catálogo de Protótipos</title>
+
+  <meta
+    name="description"
+    content="Catálogo aberto de protótipos desenvolvidos pela 2dM — Dois de Muitos."
+  >
 
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <link rel="icon" href="images/logo-2dm.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon"
+    href="https://tan-secret-seahorse-725.mypinata.cloud/ipfs/bafybeidwsm3bi5np465uzeq27intkcgo6iexnu2t533trnmv7e6kw54q2e"
+  >
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: "#1e3a2a",
+            forest: "#274933",
+            gold: "#a38c4a",
+            sand: "#f3f0e6",
+            paper: "#f7f5ee",
+            stone: "#e8e4d8"
+          }
+        }
+      }
+    }
+  </script>
 
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: 'Inter', sans-serif;
-      background: #f4f1e8;
-      color: #1f3527;
+      background: #f3f0e6;
+      color: #1e3a2a;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     .card {
-      background: #faf8f2;
-      border: 1px solid #e4ded0;
-      border-radius: 1rem;
-      overflow: hidden;
-      transition: transform 0.2s ease;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
     .card:hover {
       transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(30, 58, 42, 0.10);
     }
 
-    .btn-primary {
-      background: #274933;
-      color: #f4f1e8;
+    .tag {
+      display: inline-block;
+      padding: 0.3rem 0.6rem;
+      border-radius: 0.3rem;
+      background: #e8e4d8;
+      color: #3d4a3f;
+      font-size: 0.68rem;
       font-weight: 700;
-      padding: 0.75rem 1rem;
-      border-radius: 0.5rem;
-      text-align: center;
-      display: block;
-    }
-
-    .btn-primary:hover {
-      background: #1d3525;
-    }
-
-    .btn-secondary {
-      background: #e7e2d7;
-      color: #274933;
-      font-weight: 600;
-      padding: 0.75rem 1rem;
-      border-radius: 0.5rem;
-      text-align: center;
-      display: block;
-    }
-
-    .btn-secondary:hover {
-      background: #ddd7ca;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
     }
   </style>
 </head>
 
+
 <body>
 
-  <header class="max-w-6xl mx-auto px-5 py-8 flex items-center gap-4">
-    <img src="images/logo-2dm.png" alt="2dM" class="h-12 w-12 object-contain">
-    <div>
-      <h1 class="text-2xl md:text-3xl font-extrabold">2dM – Catálogo de Protótipos</h1>
-      <p class="text-sm text-gray-700">
-        Protótipos abertos de tecnologia regenerativa, automação e impacto social.
-      </p>
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header class="max-w-6xl mx-auto px-5 py-6">
+
+    <div class="flex items-center justify-between">
+
+      <div class="flex items-center gap-3">
+
+        <div
+          class="h-10 w-10 rounded-lg bg-forest text-sand flex items-center justify-center font-black text-lg"
+        >
+          2dM
+        </div>
+
+        <div>
+          <h1 class="font-black text-xl leading-none">
+            Dois de Muitos
+          </h1>
+
+          <p class="text-xs text-ink/60 mt-1 uppercase tracking-widest">
+            Catálogo de Protótipos
+          </p>
+        </div>
+
+      </div>
+
+      <a
+        href="#projetos"
+        class="hidden sm:inline-block text-xs font-bold uppercase tracking-wider border border-ink/40 rounded px-4 py-2 hover:bg-ink hover:text-sand transition"
+      >
+        Projetos
+      </a>
+
     </div>
+
   </header>
 
-  <main class="max-w-6xl mx-auto px-5 pb-16">
 
-    <section class="mb-16">
+  <main class="max-w-6xl mx-auto px-5">
+
+
+    <!-- =====================================================
+         IMAGEM PRINCIPAL
+    ====================================================== -->
+
+    <section class="mb-12">
+
+      <div class="rounded-2xl overflow-hidden border border-stone shadow-sm">
+
+        <img
+          src="https://tan-secret-seahorse-725.mypinata.cloud/ipfs/bafybeidwsm3bi5np465uzeq27intkcgo6iexnu2t533trnmv7e6kw54q2e"
+          alt="2dM — Catálogo de Protótipos"
+          class="w-full h-[260px] md:h-[420px] object-cover"
+        >
+
+      </div>
+
+      <div class="max-w-3xl mx-auto text-center mt-7">
+
+        <h2 class="text-2xl md:text-3xl font-black">
+          Protótipos abertos
+        </h2>
+
+        <p class="mt-3 text-sm md:text-base text-ink/70 leading-relaxed">
+          Experimentações em tecnologia, construção, automação e inovação
+          social desenvolvidas como protótipos abertos e documentáveis.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PROJETOS
+    ====================================================== -->
+
+    <section id="projetos" class="mb-16">
+
+      <div class="mb-8">
+
+        <h2 class="text-xl md:text-2xl font-black">
+          Catálogo
+        </h2>
+
+        <p class="text-sm text-ink/60 mt-2">
+          Protótipos em desenvolvimento e experimentação.
+        </p>
+
+      </div>
+
+
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
-        <!-- Protótipo 01 -->
-        <article class="card flex flex-col">
-          <img src="images/prototipo-01.jpg"
-               alt="Módulo Irrigação Autônomo"
-               class="w-full h-44 object-cover">
+
+        <!-- =================================================
+             PROTÓTIPO 01
+        ================================================== -->
+
+        <article
+          class="card bg-paper rounded-xl overflow-hidden border border-stone flex flex-col"
+        >
+
+          <div class="h-48 overflow-hidden">
+
+            <img
+              src="https://tan-secret-seahorse-725.mypinata.cloud/ipfs/bafybeidxx44rdoofaivez6icbozqepfid7xhohap6sg4qyyohdhc63elku"
+              alt="Módulo de Irrigação Autônomo"
+              class="w-full h-full object-cover"
+            >
+
+          </div>
+
 
           <div class="p-5 flex flex-col flex-1">
-            <span class="text-xs font-bold uppercase text-gray-500 mb-2">
-              Protótipo 01
+
+            <span class="text-xs font-black text-gold mb-2">
+              PROTÓTIPO 01
             </span>
 
-            <h2 class="font-bold text-lg mb-3">
+            <h3 class="font-black text-lg leading-tight">
               Módulo Irrigação Autônomo
-            </h2>
+            </h3>
 
-            <p class="text-sm text-gray-700 mb-5 flex-1">
-              Sistema móvel e off-grid para irrigação inteligente em agroflorestas e hortas comunitárias.
+            <p class="text-sm text-ink/70 leading-relaxed mt-3">
+              Sistema móvel e off-grid para irrigação inteligente em
+              agroflorestas e hortas comunitárias.
             </p>
 
-            <div class="space-y-3">
-              <a href="prototipos/irrigacao-autonoma.html" class="btn-primary">
-                Abrir protótipo
+
+            <div class="flex flex-wrap gap-2 mt-4">
+
+              <span class="tag">IoT</span>
+              <span class="tag">Irrigação</span>
+              <span class="tag">Off-grid</span>
+              <span class="tag">Automação</span>
+
+            </div>
+
+
+            <div class="mt-auto pt-6 space-y-2">
+
+              <a
+                href="projetos/irrigacao.html"
+                class="block text-center bg-forest text-sand rounded px-4 py-3 text-xs font-bold uppercase tracking-wider hover:bg-ink transition"
+              >
+                Detalhes →
               </a>
 
-              <a href="https://github.com/SEU-USUARIO/irrigacao-autonoma"
-                 target="_blank"
-                 class="btn-secondary">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener"
+                class="block text-center border border-ink/30 rounded px-4 py-3 text-xs font-bold uppercase tracking-wider hover:bg-stone transition"
+              >
                 Repositório
               </a>
+
             </div>
+
           </div>
+
         </article>
 
-        <!-- Protótipo 02 -->
-        <article class="card flex flex-col">
-          <img src="images/prototipo-02.jpg"
-               alt="Trailer Casulo"
-               class="w-full h-44 object-cover">
+
+
+        <!-- =================================================
+             PROTÓTIPO 02
+        ================================================== -->
+
+        <article
+          class="card bg-paper rounded-xl overflow-hidden border border-stone flex flex-col"
+        >
+
+          <div class="h-48 overflow-hidden">
+
+            <img
+              src="https://tan-secret-seahorse-725.mypinata.cloud/ipfs/bafybeiakultpzgw4oezbiz5v3wj5ey5mzzomgugfvyyvcz4zrjezryp2na"
+              alt="Trailer Casulo"
+              class="w-full h-full object-cover"
+            >
+
+          </div>
+
 
           <div class="p-5 flex flex-col flex-1">
-            <span class="text-xs font-bold uppercase text-gray-500 mb-2">
-              Protótipo 02
+
+            <span class="text-xs font-black text-gold mb-2">
+              PROTÓTIPO 02
             </span>
 
-            <h2 class="font-bold text-lg mb-3">
+            <h3 class="font-black text-lg leading-tight">
               Trailer Casulo
-            </h2>
+            </h3>
 
-            <p class="text-sm text-gray-700 mb-5 flex-1">
-              Mini motorhome modular e off-grid com estrutura leve, energia solar e documentação aberta.
+            <p class="text-sm text-ink/70 leading-relaxed mt-3">
+              Projeto construtivo aberto de mini motorhome off-grid,
+              modular e de estrutura leve.
             </p>
 
-            <div class="space-y-3">
-              <a href="prototipos/trailer-casulo.html" class="btn-primary">
-                Abrir protótipo
+
+            <div class="flex flex-wrap gap-2 mt-4">
+
+              <span class="tag">Open Hardware</span>
+              <span class="tag">Mobilidade</span>
+              <span class="tag">Off-grid</span>
+              <span class="tag">Habitação</span>
+
+            </div>
+
+
+            <div class="mt-auto pt-6 space-y-2">
+
+              <a
+                href="projetos/casulo.html"
+                class="block text-center bg-forest text-sand rounded px-4 py-3 text-xs font-bold uppercase tracking-wider hover:bg-ink transition"
+              >
+                Detalhes →
               </a>
 
-              <a href="https://github.com/SEU-USUARIO/trailer-casulo"
-                 target="_blank"
-                 class="btn-secondary">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener"
+                class="block text-center border border-ink/30 rounded px-4 py-3 text-xs font-bold uppercase tracking-wider hover:bg-stone transition"
+              >
                 Repositório
               </a>
+
             </div>
+
           </div>
+
         </article>
 
-        <!-- Protótipo 03 -->
-        <article class="card flex flex-col">
-          <img src="images/prototipo-03.jpg"
-               alt="Biodigestor Automático"
-               class="w-full h-44 object-cover">
+
+
+        <!-- =================================================
+             PROTÓTIPO 03
+        ================================================== -->
+
+        <article
+          class="card bg-paper rounded-xl overflow-hidden border border-stone flex flex-col"
+        >
+
+          <div class="h-48 overflow-hidden">
+
+            <img
+              src="https://tan-secret-seahorse-725.mypinata.cloud/ipfs/bafybeielnecvag5a3id2o6bovh62kxmmbdmdzb6c5kn45mvrw7ehxb3qku"
+              alt="Biodigestor Automático"
+              class="w-full h-full object-cover"
+            >
+
+          </div>
+
 
           <div class="p-5 flex flex-col flex-1">
-            <span class="text-xs font-bold uppercase text-gray-500 mb-2">
-              Protótipo 03
+
+            <span class="text-xs font-black text-gold mb-2">
+              PROTÓTIPO 03
             </span>
 
-            <h2 class="font-bold text-lg mb-3">
+            <h3 class="font-black text-lg leading-tight">
               Biodigestor Automático
-            </h2>
+            </h3>
 
-            <p class="text-sm text-gray-700 mb-5 flex-1">
-              Produção automatizada de biogás e biofertilizante com foco em saneamento descentralizado.
+            <p class="text-sm text-ink/70 leading-relaxed mt-3">
+              Sistema experimental para produção de biogás e
+              biofertilizante com automação de baixo custo.
             </p>
 
-            <div class="space-y-3">
-              <a href="prototipos/biodigestor-automatico.html" class="btn-primary">
-                Abrir protótipo
+
+            <div class="flex flex-wrap gap-2 mt-4">
+
+              <span class="tag">Biogás</span>
+              <span class="tag">Automação</span>
+              <span class="tag">Saneamento</span>
+              <span class="tag">Circular</span>
+
+            </div>
+
+
+            <div class="mt-auto pt-6 space-y-2">
+
+              <a
+                href="projetos/biodigestor.html"
+                class="block text-center bg-forest text-sand rounded px-4 py-3 text-xs font-bold uppercase tracking-wider hover:bg-ink transition"
+              >
+                Detalhes →
               </a>
 
-              <a href="https://github.com/SEU-USUARIO/biodigestor-automatico"
-                 target="_blank"
-                 class="btn-secondary">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener"
+                class="block text-center border border-ink/30 rounded px-4 py-3 text-xs font-bold uppercase tracking-wider hover:bg-stone transition"
+              >
                 Repositório
               </a>
+
             </div>
+
           </div>
+
         </article>
 
-        <!-- Protótipo 04 -->
-        <article class="card flex flex-col">
-          <img src="images/prototipo-04.jpg"
-               alt="Plataforma Moeda Social"
-               class="w-full h-44 object-cover">
+
+
+        <!-- =================================================
+             PROTÓTIPO 04
+        ================================================== -->
+
+        <article
+          class="card bg-paper rounded-xl overflow-hidden border border-stone flex flex-col"
+        >
+
+          <div class="h-48 overflow-hidden">
+
+            <img
+              src="https://tan-secret-seahorse-725.mypinata.cloud/ipfs/bafybeid4qh7gxajfykhuk36xgor4dk2mxwkvyj4riidf6wjwt5l4peuspy"
+              alt="Chatbot Moeda Social"
+              class="w-full h-full object-cover"
+            >
+
+          </div>
+
 
           <div class="p-5 flex flex-col flex-1">
-            <span class="text-xs font-bold uppercase text-gray-500 mb-2">
-              Protótipo 04
+
+            <span class="text-xs font-black text-gold mb-2">
+              PROTÓTIPO 04
             </span>
 
-            <h2 class="font-bold text-lg mb-3">
-              Plataforma Moeda Social
-            </h2>
+            <h3 class="font-black text-lg leading-tight">
+              Chatbot Moeda Social
+            </h3>
 
-            <p class="text-sm text-gray-700 mb-5 flex-1">
-              Plataforma digital para fortalecer economias locais, colaboração comunitária e governança distribuída.
+            <p class="text-sm text-ink/70 leading-relaxed mt-3">
+              Protótipo de automação para registro, consulta e
+              movimentação de uma rede de moeda social.
             </p>
 
-            <div class="space-y-3">
-              <a href="prototipos/moeda-social.html" class="btn-primary">
-                Abrir protótipo
+
+            <div class="flex flex-wrap gap-2 mt-4">
+
+              <span class="tag">Web</span>
+              <span class="tag">Chatbot</span>
+              <span class="tag">Moeda Social</span>
+              <span class="tag">Governança</span>
+
+            </div>
+
+
+            <div class="mt-auto pt-6 space-y-2">
+
+              <a
+                href="projetos/moeda-social.html"
+                class="block text-center bg-forest text-sand rounded px-4 py-3 text-xs font-bold uppercase tracking-wider hover:bg-ink transition"
+              >
+                Detalhes →
               </a>
 
-              <a href="https://github.com/SEU-USUARIO/moeda-social"
-                 target="_blank"
-                 class="btn-secondary">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener"
+                class="block text-center border border-ink/30 rounded px-4 py-3 text-xs font-bold uppercase tracking-wider hover:bg-stone transition"
+              >
                 Repositório
               </a>
+
             </div>
+
           </div>
+
         </article>
 
+
       </div>
+
     </section>
 
-    <section class="bg-[#faf8f2] border border-[#e4ded0] rounded-2xl p-8">
-      <div class="flex items-center gap-3 mb-6">
-        <div class="h-10 w-10 rounded-full bg-[#274933] text-[#f4f1e8] flex items-center justify-center font-bold">
-          ♥
-        </div>
-        <div>
-          <h2 class="text-xl font-extrabold">Valor Social</h2>
-          <p class="text-sm text-gray-700">
-            Pequenas ações, protótipos e iniciativas que já geraram impacto real em comunidades e redes colaborativas.
+
+
+    <!-- =====================================================
+         VALORES SOCIAIS
+    ====================================================== -->
+
+    <section class="mb-16">
+
+      <div class="border-t border-stone pt-10">
+
+        <div class="mb-7">
+
+          <h2 class="text-xl font-black">
+            Valores sociais
+          </h2>
+
+          <p class="text-sm text-ink/60 mt-2 max-w-2xl">
+            A prototipação também é uma forma de produzir conhecimento,
+            autonomia e ferramentas que possam retornar às comunidades.
           </p>
+
         </div>
+
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+
+          <a
+            href="#"
+            class="bg-paper border border-stone rounded-lg p-5 hover:border-forest transition"
+          >
+
+            <h3 class="font-black text-sm">
+              Conhecimento aberto
+            </h3>
+
+            <p class="text-xs text-ink/65 leading-relaxed mt-2">
+              Documentação e experimentação compartilhadas para que
+              outras pessoas possam aprender e continuar o trabalho.
+            </p>
+
+            <span class="block text-xs font-bold text-gold mt-4">
+              Ver realização →
+            </span>
+
+          </a>
+
+
+          <a
+            href="#"
+            class="bg-paper border border-stone rounded-lg p-5 hover:border-forest transition"
+          >
+
+            <h3 class="font-black text-sm">
+              Tecnologia apropriada
+            </h3>
+
+            <p class="text-xs text-ink/65 leading-relaxed mt-2">
+              Soluções experimentais pensadas para contextos reais,
+              recursos disponíveis e autonomia local.
+            </p>
+
+            <span class="block text-xs font-bold text-gold mt-4">
+              Ver realização →
+            </span>
+
+          </a>
+
+
+          <a
+            href="#"
+            class="bg-paper border border-stone rounded-lg p-5 hover:border-forest transition"
+          >
+
+            <h3 class="font-black text-sm">
+              Educação e pesquisa
+            </h3>
+
+            <p class="text-xs text-ink/65 leading-relaxed mt-2">
+              Protótipos como instrumentos de aprendizagem,
+              investigação e formação.
+            </p>
+
+            <span class="block text-xs font-bold text-gold mt-4">
+              Ver realização →
+            </span>
+
+          </a>
+
+
+          <a
+            href="#"
+            class="bg-paper border border-stone rounded-lg p-5 hover:border-forest transition"
+          >
+
+            <h3 class="font-black text-sm">
+              Impacto regenerativo
+            </h3>
+
+            <p class="text-xs text-ink/65 leading-relaxed mt-2">
+              Conhecimento e tecnologia orientados à regeneração
+              de pessoas, comunidades e territórios.
+            </p>
+
+            <span class="block text-xs font-bold text-gold mt-4">
+              Ver realização →
+            </span>
+
+          </a>
+
+
+        </div>
+
       </div>
 
-      <div class="space-y-4">
-
-        <a href="https://SEU-LINK-AQUI"
-           target="_blank"
-           class="block p-4 rounded-xl border border-[#e4ded0] hover:border-[#274933] hover:bg-[#f4f1e8] transition-colors">
-          <div class="font-semibold text-[#1f3527] mb-1">
-            CSA Guajuvira
-          </div>
-          <p class="text-sm text-gray-700">
-            Apoio a sistemas agroflorestais, produção regenerativa e organização comunitária local.
-          </p>
-        </a>
-
-        <a href="https://SEU-LINK-AQUI"
-           target="_blank"
-           class="block p-4 rounded-xl border border-[#e4ded0] hover:border-[#274933] hover:bg-[#f4f1e8] transition-colors">
-          <div class="font-semibold text-[#1f3527] mb-1">
-            Jardim Digital Teias
-          </div>
-          <p class="text-sm text-gray-700">
-            Rede de conhecimento livre para educação, documentação técnica e colaboração aberta.
-          </p>
-        </a>
-
-        <a href="https://SEU-LINK-AQUI"
-           target="_blank"
-           class="block p-4 rounded-xl border border-[#e4ded0] hover:border-[#274933] hover:bg-[#f4f1e8] transition-colors">
-          <div class="font-semibold text-[#1f3527] mb-1">
-            Terra Luminus
-          </div>
-          <p class="text-sm text-gray-700">
-            Desenvolvimento inicial de soluções para moeda social, rastreabilidade e fortalecimento de redes comunitárias.
-          </p>
-        </a>
-
-        <a href="https://SEU-LINK-AQUI"
-           target="_blank"
-           class="block p-4 rounded-xl border border-[#e4ded0] hover:border-[#274933] hover:bg-[#f4f1e8] transition-colors">
-          <div class="font-semibold text-[#1f3527] mb-1">
-            Banco de Modelos e Ensaios – ITA Rocket
-          </div>
-          <p class="text-sm text-gray-700">
-            Estrutura aberta para documentação, testes e compartilhamento de conhecimento aplicado em pesquisa e prototipação.
-          </p>
-        </a>
-
-      </div>
     </section>
+
+
+
+    <!-- =====================================================
+         PARCEIROS
+    ====================================================== -->
+
+    <section class="mb-10">
+
+      <div class="border-t border-stone pt-10">
+
+        <div class="text-center mb-8">
+
+          <p class="text-xs font-bold uppercase tracking-[0.18em] text-ink/50">
+            Parceiros e iniciativas
+          </p>
+
+        </div>
+
+
+        <div class="flex flex-wrap items-center justify-center gap-10 md:gap-16">
+
+
+          <!-- COPPI DESIGN -->
+
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener"
+            title="Coppi Design"
+            class="group"
+          >
+
+            <img
+              src="https://tan-secret-seahorse-725.mypinata.cloud/ipfs/bafkreifa4slzoyfdtowoxu4wemoqgf76tjhnyq2owgk6iegbuwenwx3sdy"
+              alt="Coppi Design"
+              class="h-16 md:h-20 max-w-[180px] w-auto object-contain opacity-75 group-hover:opacity-100 transition"
+            >
+
+          </a>
+
+
+
+          <!-- GUAJUVIRA -->
+
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener"
+            title="Guajuvira"
+            class="group"
+          >
+
+            <img
+              src="https://tan-secret-seahorse-725.mypinata.cloud/ipfs/bafkreifca4unjsort7kw57tgwzz33rgtrxjcgsntfqausqmlmux2mkn2oq"
+              alt="Guajuvira"
+              class="h-16 md:h-20 max-w-[180px] w-auto object-contain opacity-75 group-hover:opacity-100 transition"
+            >
+
+          </a>
+
+
+
+          <!-- TERRA LUMINOUS -->
+
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener"
+            title="Terra Luminous"
+            class="group"
+          >
+
+            <img
+              src="https://tan-secret-seahorse-725.mypinata.cloud/ipfs/bafkreidc7bu737qf73ac5w2rmm3v5dkejxvhxqyjsg6flw3wnbowmhnnde"
+              alt="Terra Luminous"
+              class="h-16 md:h-20 max-w-[180px] w-auto object-contain opacity-75 group-hover:opacity-100 transition"
+            >
+
+          </a>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
 
   </main>
 
-  <footer class="border-t border-[#e4ded0] py-8 text-center text-sm text-gray-600">
-    2dM – Catálogo de Protótipos • GitHub Pages • CC BY-SA 4.0
-  </footer>
 
-</body>
-</html>
-```
 
----
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
 
-## Estrutura de pastas recomendada
+  <footer class="border-t border-stone py-7">
 
-```text
-/
-├── index.html
-├── images/
-│   ├── logo-2dm.png
-│   ├── prototipo-01.jpg
-│   ├── prototipo-02.jpg
-│   ├── prototipo-03.jpg
-│   └── prototipo-04.jpg
-└── prototipos/
-    ├── irrigacao-autonoma.html
-    ├── trailer-casulo.html
-    ├── biodigestor-automatico.html
-    └── moeda-social.html
-```
+    <div class="max-w-6xl mx-auto px-5 text-center">
 
----
+      <p class="font-black text-sm">
+        2dM — Dois de Muitos
+      </p>
 
-## Modelo simples para cada protótipo
+      <p class="text-xs text-ink/50 mt-1">
+        Protótipos abertos · conhecimento compartilhado · impacto social
+      </p>
 
-### `prototipos/irrigacao-autonoma.html`
-
-```html
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Módulo Irrigação Autônomo – 2dM</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-
-<body class="bg-[#f4f1e8] text-[#1f3527] font-sans">
-
-  <main class="max-w-3xl mx-auto px-5 py-10">
-
-    <a href="../index.html" class="text-sm font-semibold hover:underline">
-      ← Voltar ao catálogo
-    </a>
-
-    <img src="../images/prototipo-01.jpg"
-         alt="Módulo Irrigação Autônomo"
-         class="w-full rounded-2xl mt-4 mb-8">
-
-    <p class="text-xs font-bold uppercase tracking-[0.2em] text-gray-500 mb-3">
-      Protótipo 01
-    </p>
-
-    <h1 class="text-3xl font-extrabold mb-6">
-      Módulo Irrigação Autônomo
-    </h1>
-
-    <p class="mb-4 leading-relaxed">
-      Sistema móvel e off-grid para irrigação inteligente utilizando energia solar,
-      controle eletrônico e acionamento de válvulas para uso em agroflorestas,
-      viveiros e hortas comunitárias.
-    </p>
-
-    <h2 class="text-xl font-bold mt-8 mb-3">Objetivo</h2>
-    <p class="mb-4 leading-relaxed">
-      Reduzir consumo de água, facilitar manejo agrícola e permitir operação em
-      locais sem infraestrutura elétrica convencional.
-    </p>
-
-    <h2 class="text-xl font-bold mt-8 mb-3">Componentes principais</h2>
-    <ul class="list-disc pl-5 space-y-2 mb-6">
-      <li>Painel solar 12 V</li>
-      <li>Controlador de carga</li>
-      <li>Bateria estacionária</li>
-      <li>Microcontrolador Pico</li>
-      <li>Relés optoacoplados</li>
-      <li>Válvulas solenóides para múltiplas linhas de irrigação</li>
-    </ul>
-
-    <h2 class="text-xl font-bold mt-8 mb-3">Aplicações</h2>
-    <ul class="list-disc pl-5 space-y-2 mb-8">
-      <li>Agroflorestas regenerativas</li>
-      <li>Produção de mudas</li>
-      <li>Hortas urbanas e comunitárias</li>
-      <li>Projetos educacionais de automação rural</li>
-    </ul>
-
-    <div class="flex flex-wrap gap-4">
-      <a href="https://github.com/SEU-USUARIO/irrigacao-autonoma"
-         target="_blank"
-         class="bg-[#274933] text-[#f4f1e8] px-5 py-3 rounded-lg font-bold">
-        Abrir repositório
-      </a>
-
-      <a href="../index.html"
-         class="border border-[#274933] px-5 py-3 rounded-lg font-bold">
-        Voltar ao catálogo
-      </a>
     </div>
 
-  </main>
+  </footer>
+
 
 </body>
 </html>
