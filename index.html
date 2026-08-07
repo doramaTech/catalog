@@ -3,293 +3,208 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2dM – Catálogo Regenerativo</title>
-  <meta name="description" content="Projetos abertos para um futuro sustentável, colaborativo e regenerativo. Conhecimento livre, tecnologia apropriada e inovação social para comunidades resilientes." />
+  <title>2dM – Catálogo de Protótipos</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
+
   <link rel="icon" href="images/logo-2dm.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            ink:   '#1e3a2a',   // verde-escuro profundo
-            forest:'#274933',
-            sage:  '#7d8c68',
-            olive: '#8a8a4f',
-            gold:  '#a38c4a',
-            sand:  '#f3f0e6',   // creme de fundo
-            paper: '#f7f5ee',  // creme de card
-            stone2:'#e8e4d8',
-            taupe: '#b9b39e'
-          },
-          fontFamily: {
-            sans: ['Archivo', 'system-ui', 'sans-serif'],
-            serif: ['"Crimson Pro"', 'Georgia', 'serif']
-          }
-        }
-      }
-    }
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Archivo', sans-serif; background-color: #f3f0e6; color: #1e3a2a; }
-
-    /* Folhagens decorativas de fundo (esquerda/direita) */
-    .bg-foliage {
-      background-image: url("images/leaves-left.svg");
-      background-repeat: no-repeat;
-      background-size: 260px auto;
-      background-position: left top;
-    }
-    .bg-foliage-right {
-      background-image: url("images/leaves-right.svg");
-      background-repeat: no-repeat;
-      background-size: 260px auto;
-      background-position: right center;
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f4f1e8;
+      color: #1f3527;
     }
 
-    /* Linha divisória do título de seção (folhinha ao centro) */
-    .section-divider { position: relative; display: flex; align-items: center; justify-content: center; }
-    .section-divider::before,
-    .section-divider::after {
-      content: "";
-      height: 1px;
-      width: 48px;
-      background: #b9b39e;
-    }
-    .section-divider::before { margin-right: 14px; }
-    .section-divider::after { margin-left: 14px; }
-
-    @media (max-width: 639px) {
-      .hero-label { font-size: 0.6rem; letter-spacing: 0.02em; }
-      .hero-icons svg { height: 1.75rem; width: 1.75rem; }
+    .card {
+      background: #faf8f2;
+      border: 1px solid #e4ded0;
+      border-radius: 1rem;
+      overflow: hidden;
+      transition: transform 0.2s ease;
     }
 
-    /* Tag / chip */
-    .tag {
-      display: inline-block;
-      padding: 0.3rem 0.7rem;
-      border-radius: 0.375rem;
-      background: #e8e4d8;
-      color: #3d4a3f;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
+    .card:hover {
+      transform: translateY(-4px);
     }
 
-    /* Botão verde primário */
     .btn-primary {
       background: #274933;
-      color: #f3f0e6;
+      color: #f4f1e8;
       font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-size: 0.78rem;
-      border-radius: 0.4rem;
-      padding: 0.85rem 1.2rem;
-      transition: background 0.2s ease;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      text-align: center;
+      display: block;
     }
-    .btn-primary:hover { background: #1e3a2a; }
 
-    /* Botão cinza secundário */
-    .btn-secondary {
-      background: #e5e1d5;
-      color: #2c3a2e;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 0.75rem;
-      border-radius: 0.4rem;
-      padding: 0.7rem 1rem;
-      transition: background 0.2s ease;
+    .btn-primary:hover {
+      background: #1d3525;
     }
-    .btn-secondary:hover { background: #dcd7c8; }
+
+    .btn-secondary {
+      background: #e7e2d7;
+      color: #274933;
+      font-weight: 600;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      text-align: center;
+      display: block;
+    }
+
+    .btn-secondary:hover {
+      background: #ddd7ca;
+    }
   </style>
 </head>
-<body class="bg-foliage">
 
-  <!-- ============ HEADER ============ -->
-  <header class="max-w-6xl mx-auto px-5 py-5 flex items-center justify-between flex-wrap gap-4">
-    <div class="flex items-center gap-3">
-      <img src="images/logo-2dm.png" alt="Logo 2dM – Dois de Muitos" class="h-11 w-11 object-contain" />
-      <span class="text-2xl font-extrabold tracking-tight text-ink">2dM</span>
-      <span class="hidden sm:inline-block h-8 w-px bg-taupe mx-1"></span>
-      <span class="hidden sm:inline text-sm font-bold uppercase tracking-[0.18em] text-ink">Catálogo Regenerativo</span>
+<body>
+
+  <header class="max-w-6xl mx-auto px-5 py-8 flex items-center gap-4">
+    <img src="images/logo-2dm.png" alt="2dM" class="h-12 w-12 object-contain">
+    <div>
+      <h1 class="text-2xl md:text-3xl font-extrabold">2dM – Catálogo de Protótipos</h1>
+      <p class="text-sm text-gray-700">
+        Protótipos abertos de tecnologia regenerativa, automação e impacto social.
+      </p>
     </div>
-    <nav class="hidden md:flex items-center gap-7 text-sm font-bold uppercase tracking-[0.12em] text-ink">
-      <a href="#projetos" class="hover:text-gold transition-colors">Projetos</a>
-      <a href="#sobre" class="hover:text-gold transition-colors">Sobre</a>
-      <a href="#contribuir" class="hover:text-gold transition-colors">Como Contribuir</a>
-      <a href="#documentacao" class="hover:text-gold transition-colors">Documentação</a>
-      <a href="#contato" class="hover:text-gold transition-colors">Contato</a>
-    </nav>
-    <a href="#projetos" class="inline-flex items-center gap-2 border border-ink/60 rounded-full px-5 py-2 text-xs font-bold uppercase tracking-[0.1em] hover:bg-ink hover:text-sand transition-colors">
-      Ver Repositórios
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-    </a>
   </header>
 
-  <!-- Menu mobile simples -->
-  <div class="md:hidden max-w-6xl mx-auto px-5 pb-4">
-    <nav class="flex flex-wrap gap-x-5 gap-y-2 text-xs font-bold uppercase tracking-[0.1em] text-ink">
-      <a href="#projetos">Projetos</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#contribuir">Como Contribuir</a>
-      <a href="#documentacao">Documentação</a>
-      <a href="#contato">Contato</a>
-    </nav>
-  </div>
+  <main class="max-w-6xl mx-auto px-5 pb-16">
 
-  <main class="max-w-6xl mx-auto px-5">
-
-    <!-- ============ HERO ============ -->
-    <section class="bg-paper rounded-2xl border border-stone2 shadow-sm overflow-hidden mb-12">
-      <div class="grid md:grid-cols-2 items-center gap-6 p-8 md:p-14">
-        <div>
-          <h1 class="font-serif text-4xl md:text-5xl font-bold leading-tight text-ink mb-6">2dM &ndash; Catálogo Regenerativo</h1>
-          <p class="text-lg md:text-xl font-bold leading-relaxed mb-4">Projetos abertos para um futuro sustentável, colaborativo e regenerativo.</p>
-          <p class="text-base leading-relaxed text-ink/80">Conhecimento livre, tecnologia apropriada e inovação social para comunidades resilientes.</p>
-
-          <div class="grid grid-cols-3 gap-2 sm:gap-4 mt-10">
-            <div class="text-center">
-              <svg class="hero-icons h-9 w-9 mx-auto mb-2 text-forest" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22c4-3 8-6.5 8-11a8 8 0 0 0-16 0c0 4.5 4 8 8 11z"/><path d="M12 22V12"/><path d="M8 14c2-1 4-1 4-1s2 0 4 1"/></svg>
-              <span class="hero-label font-extrabold uppercase text-ink">Aberto</span>
-            </div>
-            <div class="text-center">
-              <svg class="hero-icons h-9 w-9 mx-auto mb-2 text-forest" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="6" r="3"/><circle cx="5" cy="10" r="3"/><circle cx="19" cy="10" r="3"/><path d="M8.5 12.5c-2 1.5-3.5 4-3.5 6.5M15.5 12.5c2 1.5 3.5 4 3.5 6.5M9 18h6"/><path d="M12 9v2"/></svg>
-              <span class="hero-label font-extrabold uppercase text-ink">Colaborativo</span>
-            </div>
-            <div class="text-center">
-              <svg class="hero-icons h-9 w-9 mx-auto mb-2 text-forest" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg>
-              <span class="hero-label font-extrabold uppercase text-ink">Regenerativo</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="rounded-xl overflow-hidden">
-          <img src="images/hero-illustration.png" alt="Ilustração do módulo de irrigação autônomo com painel solar" class="w-full h-full object-cover" />
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ PROJETOS ============ -->
-    <section id="projetos" class="mb-14">
-      <div class="text-center mb-10">
-        <h2 class="text-xl md:text-2xl font-extrabold uppercase tracking-[0.06em] text-ink mb-4">Projetos em Desenvolvimento Aberto</h2>
-        <div class="section-divider">
-          <svg class="h-5 w-5 text-forest" viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22L6.66 19.7C7.14 19.87 7.64 20 8 20c1.5 0 2.5-1 3-2 .42-.83 1.25-1.5 2-1.5h3c2.5 0 4.5-2.5 4.5-5S19.5 8 17 8z"/></svg>
-        </div>
-      </div>
-
+    <section class="mb-16">
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
-        <!-- Card 01 -->
-        <article class="bg-paper rounded-xl border border-stone2 shadow-sm flex flex-col overflow-hidden">
-          <div class="h-44 overflow-hidden">
-            <img src="images/card1-photo.png" alt="Módulo de Irrigação Autônomo em campo" class="w-full h-full object-cover" />
-          </div>
+        <!-- Protótipo 01 -->
+        <article class="card flex flex-col">
+          <img src="images/prototipo-01.jpg"
+               alt="Módulo Irrigação Autônomo"
+               class="w-full h-44 object-cover">
+
           <div class="p-5 flex flex-col flex-1">
-            <div class="flex items-start gap-3 mb-3">
-              <span class="inline-flex items-center justify-center h-7 min-w-7 px-2 rounded bg-forest text-sand text-xs font-extrabold">01</span>
-              <h3 class="font-extrabold text-lg leading-snug text-ink">Módulo Irrigação Autônomo</h3>
-            </div>
-            <p class="text-sm leading-relaxed text-ink/80 mb-4">Sistema móvel e off-grid para irrigação inteligente em agroflorestas e hortas comunitárias.</p>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="tag">IoT</span>
-              <span class="tag">Irrigação</span>
-              <span class="tag">Off-grid</span>
-              <span class="tag">Automação</span>
-            </div>
-            <div class="mt-auto space-y-3">
-              <a href="#" class="btn-primary flex items-center justify-center gap-2">Ver Projeto <span aria-hidden="true">&rarr;</span></a>
-              <a href="#" class="btn-secondary flex items-center justify-center gap-2">
+            <span class="text-xs font-bold uppercase text-gray-500 mb-2">
+              Protótipo 01
+            </span>
+
+            <h2 class="font-bold text-lg mb-3">
+              Módulo Irrigação Autônomo
+            </h2>
+
+            <p class="text-sm text-gray-700 mb-5 flex-1">
+              Sistema móvel e off-grid para irrigação inteligente em agroflorestas e hortas comunitárias.
+            </p>
+
+            <div class="space-y-3">
+              <a href="prototipos/irrigacao-autonoma.html" class="btn-primary">
+                Abrir protótipo
+              </a>
+
+              <a href="https://github.com/SEU-USUARIO/irrigacao-autonoma"
+                 target="_blank"
+                 class="btn-secondary">
                 Repositório
-                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
               </a>
             </div>
           </div>
         </article>
 
-        <!-- Card 02 -->
-        <article class="bg-paper rounded-xl border border-stone2 shadow-sm flex flex-col overflow-hidden">
-          <div class="h-44 overflow-hidden">
-            <img src="images/card2-photo.png" alt="Trailer Casulo, mini motorhome com estrutura de madeira" class="w-full h-full object-cover" />
-          </div>
+        <!-- Protótipo 02 -->
+        <article class="card flex flex-col">
+          <img src="images/prototipo-02.jpg"
+               alt="Trailer Casulo"
+               class="w-full h-44 object-cover">
+
           <div class="p-5 flex flex-col flex-1">
-            <div class="flex items-start gap-3 mb-3">
-              <span class="inline-flex items-center justify-center h-7 min-w-7 px-2 rounded bg-forest text-sand text-xs font-extrabold">02</span>
-              <h3 class="font-extrabold text-lg leading-snug text-ink">Trailer Casulo (Mini Motorhome)</h3>
-            </div>
-            <p class="text-sm leading-relaxed text-ink/80 mb-4">Projeto construtivo aberto de mini motorhome off-grid com estrutura leve, solar e modular.</p>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="tag">Open Hardware</span>
-              <span class="tag">Mobilidade</span>
-              <span class="tag">Off-grid</span>
-              <span class="tag">Habitação</span>
-            </div>
-            <div class="mt-auto space-y-3">
-              <a href="#" class="btn-primary flex items-center justify-center gap-2">Ver Projeto <span aria-hidden="true">&rarr;</span></a>
-              <a href="#" class="btn-secondary flex items-center justify-center gap-2">
+            <span class="text-xs font-bold uppercase text-gray-500 mb-2">
+              Protótipo 02
+            </span>
+
+            <h2 class="font-bold text-lg mb-3">
+              Trailer Casulo
+            </h2>
+
+            <p class="text-sm text-gray-700 mb-5 flex-1">
+              Mini motorhome modular e off-grid com estrutura leve, energia solar e documentação aberta.
+            </p>
+
+            <div class="space-y-3">
+              <a href="prototipos/trailer-casulo.html" class="btn-primary">
+                Abrir protótipo
+              </a>
+
+              <a href="https://github.com/SEU-USUARIO/trailer-casulo"
+                 target="_blank"
+                 class="btn-secondary">
                 Repositório
-                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
               </a>
             </div>
           </div>
         </article>
 
-        <!-- Card 03 -->
-        <article class="bg-paper rounded-xl border border-stone2 shadow-sm flex flex-col overflow-hidden">
-          <div class="h-44 overflow-hidden">
-            <img src="images/card3-photo.png" alt="Biodigestor Automático, diagrama técnico em aquarela" class="w-full h-full object-cover" />
-          </div>
+        <!-- Protótipo 03 -->
+        <article class="card flex flex-col">
+          <img src="images/prototipo-03.jpg"
+               alt="Biodigestor Automático"
+               class="w-full h-44 object-cover">
+
           <div class="p-5 flex flex-col flex-1">
-            <div class="flex items-start gap-3 mb-3">
-              <span class="inline-flex items-center justify-center h-7 min-w-7 px-2 rounded bg-forest text-sand text-xs font-extrabold">03</span>
-              <h3 class="font-extrabold text-lg leading-snug text-ink">Biodigestor Automático</h3>
-            </div>
-            <p class="text-sm leading-relaxed text-ink/80 mb-4">Sistema automatizado para produção de biogás e biofertilizante com baixo custo e alta eficiência.</p>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="tag">Biogás</span>
-              <span class="tag">Automação</span>
-              <span class="tag">Saneamento</span>
-              <span class="tag">Economia Circular</span>
-            </div>
-            <div class="mt-auto space-y-3">
-              <a href="#" class="btn-primary flex items-center justify-center gap-2">Ver Projeto <span aria-hidden="true">&rarr;</span></a>
-              <a href="#" class="btn-secondary flex items-center justify-center gap-2">
+            <span class="text-xs font-bold uppercase text-gray-500 mb-2">
+              Protótipo 03
+            </span>
+
+            <h2 class="font-bold text-lg mb-3">
+              Biodigestor Automático
+            </h2>
+
+            <p class="text-sm text-gray-700 mb-5 flex-1">
+              Produção automatizada de biogás e biofertilizante com foco em saneamento descentralizado.
+            </p>
+
+            <div class="space-y-3">
+              <a href="prototipos/biodigestor-automatico.html" class="btn-primary">
+                Abrir protótipo
+              </a>
+
+              <a href="https://github.com/SEU-USUARIO/biodigestor-automatico"
+                 target="_blank"
+                 class="btn-secondary">
                 Repositório
-                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
               </a>
             </div>
           </div>
         </article>
 
-        <!-- Card 04 -->
-        <article class="bg-paper rounded-xl border border-stone2 shadow-sm flex flex-col overflow-hidden">
-          <div class="h-44 overflow-hidden">
-            <img src="images/card4-photo.png" alt="Rede de moeda social, pessoas conectadas" class="w-full h-full object-cover" />
-          </div>
+        <!-- Protótipo 04 -->
+        <article class="card flex flex-col">
+          <img src="images/prototipo-04.jpg"
+               alt="Plataforma Moeda Social"
+               class="w-full h-44 object-cover">
+
           <div class="p-5 flex flex-col flex-1">
-            <div class="flex items-start gap-3 mb-3">
-              <span class="inline-flex items-center justify-center h-7 min-w-7 px-2 rounded bg-forest text-sand text-xs font-extrabold">04</span>
-              <h3 class="font-extrabold text-lg leading-snug text-ink">Plataforma Moeda Social</h3>
-            </div>
-            <p class="text-sm leading-relaxed text-ink/80 mb-4">Plataforma de moeda social digital para fortalecer economias locais e redes de colaboração.</p>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="tag">Web</span>
-              <span class="tag">Blockchain</span>
-              <span class="tag">Moeda Social</span>
-              <span class="tag">Governança</span>
-            </div>
-            <div class="mt-auto space-y-3">
-              <a href="#" class="btn-primary flex items-center justify-center gap-2">Ver Projeto <span aria-hidden="true">&rarr;</span></a>
-              <a href="#" class="btn-secondary flex items-center justify-center gap-2">
+            <span class="text-xs font-bold uppercase text-gray-500 mb-2">
+              Protótipo 04
+            </span>
+
+            <h2 class="font-bold text-lg mb-3">
+              Plataforma Moeda Social
+            </h2>
+
+            <p class="text-sm text-gray-700 mb-5 flex-1">
+              Plataforma digital para fortalecer economias locais, colaboração comunitária e governança distribuída.
+            </p>
+
+            <div class="space-y-3">
+              <a href="prototipos/moeda-social.html" class="btn-primary">
+                Abrir protótipo
+              </a>
+
+              <a href="https://github.com/SEU-USUARIO/moeda-social"
+                 target="_blank"
+                 class="btn-secondary">
                 Repositório
-                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
               </a>
             </div>
           </div>
@@ -298,83 +213,178 @@
       </div>
     </section>
 
-    <!-- ============ VALORES / FAIXA CINZA ============ -->
-    <section id="sobre" class="grid grid-cols-2 lg:grid-cols-4 gap-px bg-stone2 rounded-xl overflow-hidden mb-14 shadow-sm">
-      <div class="bg-sand p-8 text-center flex flex-col items-center">
-        <svg class="h-10 w-10 text-gold mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 22c4-3 8-6.5 8-11a8 8 0 0 0-16 0c0 4.5 4 8 8 11z"/><path d="M12 22V12"/><path d="M9 13c1.5-1 3-1 3-1s1.5 0 3 1"/></svg>
-        <h3 class="text-sm font-extrabold uppercase tracking-[0.1em] text-ink mb-2">Conhecimento Livre</h3>
-        <p class="text-sm leading-relaxed text-ink/80">Documentação técnica, manuais, códigos e dados abertos para toda a comunidade.</p>
-      </div>
-      <div class="bg-sand p-8 text-center flex flex-col items-center">
-        <svg class="h-10 w-10 text-gold mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="6" r="3"/><circle cx="5" cy="10" r="3"/><circle cx="19" cy="10" r="3"/><path d="M8.5 12.5c-2 1.5-3.5 4-3.5 6.5M15.5 12.5c2 1.5 3.5 4 3.5 6.5M9 18h6"/></svg>
-        <h3 class="text-sm font-extrabold uppercase tracking-[0.1em] text-ink mb-2">Colabore Conosco</h3>
-        <p class="text-sm leading-relaxed text-ink/80">Participe, contribua, sugira melhorias e ajude a levar esses projetos mais longe.</p>
-      </div>
-      <div class="bg-sand p-8 text-center flex flex-col items-center">
-        <svg class="h-10 w-10 text-gold mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M22 10L12 15 2 10l10-5 10 5z"/><path d="M6 12v5c3 1.5 9 1.5 12 0v-5"/></svg>
-        <h3 class="text-sm font-extrabold uppercase tracking-[0.1em] text-ink mb-2">Educação e Pesquisa</h3>
-        <p class="text-sm leading-relaxed text-ink/80">Projetos desenvolvidos para ICs, disciplinas, TCCs e pesquisas científicas.</p>
-      </div>
-      <div class="bg-sand p-8 text-center flex flex-col items-center">
-        <svg class="h-10 w-10 text-gold mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        <h3 class="text-sm font-extrabold uppercase tracking-[0.1em] text-ink mb-2">Impacto Regenerativo</h3>
-        <p class="text-sm leading-relaxed text-ink/80">Tecnologias apropriadas para regenerar pessoas, comunidades e territórios.</p>
-      </div>
-    </section>
-
-    <!-- ============ CTA FINAL ============ -->
-    <section id="contato" class="bg-forest rounded-2xl p-8 md:p-12 mb-14 flex flex-col lg:flex-row items-center gap-8 lg:gap-14 shadow-md">
-      <div class="flex items-center gap-4 shrink-0">
-        <img src="images/logo-2dm.png" alt="Logo 2dM" class="h-20 w-20 object-contain" />
+    <section class="bg-[#faf8f2] border border-[#e4ded0] rounded-2xl p-8">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="h-10 w-10 rounded-full bg-[#274933] text-[#f4f1e8] flex items-center justify-center font-bold">
+          ♥
+        </div>
         <div>
-          <span class="text-4xl font-extrabold text-sand block leading-none">2dM</span>
-          <span class="text-sm text-sand/80 font-medium">Dois de Muitos</span>
+          <h2 class="text-xl font-extrabold">Valor Social</h2>
+          <p class="text-sm text-gray-700">
+            Pequenas ações, protótipos e iniciativas que já geraram impacto real em comunidades e redes colaborativas.
+          </p>
         </div>
       </div>
-      <div class="flex-1 text-center lg:text-left">
-        <h2 class="text-xl md:text-2xl font-extrabold text-sand mb-3">Vamos construir juntos um futuro regenerativo.</h2>
-        <p class="text-sand/85 leading-relaxed">Acesse os repositórios, acompanhe as atualizações e faça parte dessa rede viva.</p>
+
+      <div class="space-y-4">
+
+        <a href="https://SEU-LINK-AQUI"
+           target="_blank"
+           class="block p-4 rounded-xl border border-[#e4ded0] hover:border-[#274933] hover:bg-[#f4f1e8] transition-colors">
+          <div class="font-semibold text-[#1f3527] mb-1">
+            CSA Guajuvira
+          </div>
+          <p class="text-sm text-gray-700">
+            Apoio a sistemas agroflorestais, produção regenerativa e organização comunitária local.
+          </p>
+        </a>
+
+        <a href="https://SEU-LINK-AQUI"
+           target="_blank"
+           class="block p-4 rounded-xl border border-[#e4ded0] hover:border-[#274933] hover:bg-[#f4f1e8] transition-colors">
+          <div class="font-semibold text-[#1f3527] mb-1">
+            Jardim Digital Teias
+          </div>
+          <p class="text-sm text-gray-700">
+            Rede de conhecimento livre para educação, documentação técnica e colaboração aberta.
+          </p>
+        </a>
+
+        <a href="https://SEU-LINK-AQUI"
+           target="_blank"
+           class="block p-4 rounded-xl border border-[#e4ded0] hover:border-[#274933] hover:bg-[#f4f1e8] transition-colors">
+          <div class="font-semibold text-[#1f3527] mb-1">
+            Terra Luminus
+          </div>
+          <p class="text-sm text-gray-700">
+            Desenvolvimento inicial de soluções para moeda social, rastreabilidade e fortalecimento de redes comunitárias.
+          </p>
+        </a>
+
+        <a href="https://SEU-LINK-AQUI"
+           target="_blank"
+           class="block p-4 rounded-xl border border-[#e4ded0] hover:border-[#274933] hover:bg-[#f4f1e8] transition-colors">
+          <div class="font-semibold text-[#1f3527] mb-1">
+            Banco de Modelos e Ensaios – ITA Rocket
+          </div>
+          <p class="text-sm text-gray-700">
+            Estrutura aberta para documentação, testes e compartilhamento de conhecimento aplicado em pesquisa e prototipação.
+          </p>
+        </a>
+
       </div>
-      <a href="#projetos" class="shrink-0 inline-flex items-center gap-3 border border-sand/70 rounded-md px-6 py-3 text-sm font-extrabold uppercase tracking-[0.08em] text-sand hover:bg-sand hover:text-forest transition-colors">
-        Ver Todos os Repositórios
-        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22L6.66 19.7C7.14 19.87 7.64 20 8 20c1.5 0 2.5-1 3-2 .42-.83 1.25-1.5 2-1.5h3c2.5 0 4.5-2.5 4.5-5S19.5 8 17 8z"/></svg>
-      </a>
     </section>
+
   </main>
 
-  <!-- ============ FOOTER ============ -->
-  <footer class="bg-ink text-sand">
-    <div class="max-w-6xl mx-auto px-5 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
-      <div class="text-center md:text-left">
-        <p class="font-bold text-sm">2dM &ndash; Catálogo Regenerativo</p>
-        <p class="text-xs text-sand/70 mt-1">Tecnologia aberta para um mundo melhor.</p>
-      </div>
-      <nav class="flex items-center gap-6 text-sm">
-        <a href="#" class="flex items-center gap-2 hover:text-gold transition-colors">
-          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
-          GitHub
-        </a>
-        <a href="#" class="flex items-center gap-2 hover:text-gold transition-colors">
-          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5zm0 2.2L18.3 7.6 12 11 5.7 7.6 12 4.2zM5 9.5l6 3.3v6.7l-6-3.3V9.5zm8 10V12.8l6-3.3v6.7l-6 3.3z"/></svg>
-          IPFS
-        </a>
-        <a href="#" class="flex items-center gap-2 hover:text-gold transition-colors">
-          <span class="font-serif font-extrabold text-sm">Z</span>
-          Zenodo
-        </a>
-        <a href="#" class="flex items-center gap-2 hover:text-gold transition-colors">
-          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12h3M18 12h3M12 3v3M12 18v3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="4"/></svg>
-          ResearchHub
-        </a>
-      </nav>
-      <div class="flex items-center gap-2 text-xs text-sand/70">
-        Licença CC BY-SA 4.0
-        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11"/></svg>
-        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11"/></svg>
-        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="11"/></svg>
-      </div>
-    </div>
+  <footer class="border-t border-[#e4ded0] py-8 text-center text-sm text-gray-600">
+    2dM – Catálogo de Protótipos • GitHub Pages • CC BY-SA 4.0
   </footer>
+
+</body>
+</html>
+```
+
+---
+
+## Estrutura de pastas recomendada
+
+```text
+/
+├── index.html
+├── images/
+│   ├── logo-2dm.png
+│   ├── prototipo-01.jpg
+│   ├── prototipo-02.jpg
+│   ├── prototipo-03.jpg
+│   └── prototipo-04.jpg
+└── prototipos/
+    ├── irrigacao-autonoma.html
+    ├── trailer-casulo.html
+    ├── biodigestor-automatico.html
+    └── moeda-social.html
+```
+
+---
+
+## Modelo simples para cada protótipo
+
+### `prototipos/irrigacao-autonoma.html`
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Módulo Irrigação Autônomo – 2dM</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#f4f1e8] text-[#1f3527] font-sans">
+
+  <main class="max-w-3xl mx-auto px-5 py-10">
+
+    <a href="../index.html" class="text-sm font-semibold hover:underline">
+      ← Voltar ao catálogo
+    </a>
+
+    <img src="../images/prototipo-01.jpg"
+         alt="Módulo Irrigação Autônomo"
+         class="w-full rounded-2xl mt-4 mb-8">
+
+    <p class="text-xs font-bold uppercase tracking-[0.2em] text-gray-500 mb-3">
+      Protótipo 01
+    </p>
+
+    <h1 class="text-3xl font-extrabold mb-6">
+      Módulo Irrigação Autônomo
+    </h1>
+
+    <p class="mb-4 leading-relaxed">
+      Sistema móvel e off-grid para irrigação inteligente utilizando energia solar,
+      controle eletrônico e acionamento de válvulas para uso em agroflorestas,
+      viveiros e hortas comunitárias.
+    </p>
+
+    <h2 class="text-xl font-bold mt-8 mb-3">Objetivo</h2>
+    <p class="mb-4 leading-relaxed">
+      Reduzir consumo de água, facilitar manejo agrícola e permitir operação em
+      locais sem infraestrutura elétrica convencional.
+    </p>
+
+    <h2 class="text-xl font-bold mt-8 mb-3">Componentes principais</h2>
+    <ul class="list-disc pl-5 space-y-2 mb-6">
+      <li>Painel solar 12 V</li>
+      <li>Controlador de carga</li>
+      <li>Bateria estacionária</li>
+      <li>Microcontrolador Pico</li>
+      <li>Relés optoacoplados</li>
+      <li>Válvulas solenóides para múltiplas linhas de irrigação</li>
+    </ul>
+
+    <h2 class="text-xl font-bold mt-8 mb-3">Aplicações</h2>
+    <ul class="list-disc pl-5 space-y-2 mb-8">
+      <li>Agroflorestas regenerativas</li>
+      <li>Produção de mudas</li>
+      <li>Hortas urbanas e comunitárias</li>
+      <li>Projetos educacionais de automação rural</li>
+    </ul>
+
+    <div class="flex flex-wrap gap-4">
+      <a href="https://github.com/SEU-USUARIO/irrigacao-autonoma"
+         target="_blank"
+         class="bg-[#274933] text-[#f4f1e8] px-5 py-3 rounded-lg font-bold">
+        Abrir repositório
+      </a>
+
+      <a href="../index.html"
+         class="border border-[#274933] px-5 py-3 rounded-lg font-bold">
+        Voltar ao catálogo
+      </a>
+    </div>
+
+  </main>
 
 </body>
 </html>
