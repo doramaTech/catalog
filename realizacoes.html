@@ -1,0 +1,445 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>2dM — Realizações Anteriores</title>
+
+  <meta
+    name="description"
+    content="Registro de realizações, ações, encontros e experimentações da 2dM — Dois de Muitos."
+  >
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link
+    rel="icon"
+    href="https://tan-secret-seahorse-725.mypinata.cloud/ipfs/bafybeidwsm3bi5np465uzeq27intkcgo6iexnu2t533trnmv7e6kw54q2e"
+  >
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: "#1e3a2a",
+            forest: "#274933",
+            gold: "#a38c4a",
+            sand: "#f3f0e6",
+            paper: "#f7f5ee",
+            stone: "#e8e4d8"
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f3f0e6;
+      color: #1e3a2a;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .memory {
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .memory:hover {
+      transform: translateY(-4px) rotate(0deg) !important;
+      box-shadow: 0 14px 30px rgba(30, 58, 42, 0.12);
+    }
+
+    .photo {
+      background: #f7f5ee;
+      padding: 0.55rem;
+      border: 1px solid #e8e4d8;
+      box-shadow: 0 6px 18px rgba(30, 58, 42, 0.08);
+    }
+
+    .timeline {
+      position: relative;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 1px;
+      background: #d7d1c3;
+      transform: translateX(-50%);
+    }
+
+    @media (max-width: 767px) {
+
+      .timeline::before {
+        left: 18px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header class="max-w-6xl mx-auto px-5 py-6">
+
+    <div class="flex items-center justify-between">
+
+      <div class="flex items-center gap-3">
+
+        <div
+          class="h-10 w-10 rounded-lg bg-forest text-sand flex items-center justify-center font-black text-lg"
+        >
+          2dM
+        </div>
+
+        <div>
+
+          <h1 class="font-black text-xl leading-none">
+            Dois de Muitos
+          </h1>
+
+          <p class="text-xs text-ink/60 mt-1 uppercase tracking-widest">
+            Realizações anteriores
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <nav class="hidden sm:flex items-center gap-5">
+
+        <a
+          href="index.html"
+          class="text-xs font-bold uppercase tracking-wider hover:text-gold transition"
+        >
+          Protótipos
+        </a>
+
+        <a
+          href="album.html"
+          class="text-xs font-bold uppercase tracking-wider hover:text-gold transition"
+        >
+          Álbum
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <main class="max-w-6xl mx-auto px-5">
+
+
+    <!-- =====================================================
+         INTRODUÇÃO
+    ====================================================== -->
+
+    <section class="max-w-3xl mx-auto text-center pt-8 pb-16">
+
+      <p class="text-xs font-bold uppercase tracking-[0.18em] text-gold">
+        Arquivo vivo
+      </p>
+
+      <h2 class="text-3xl md:text-5xl font-black mt-3">
+        Realizações anteriores
+      </h2>
+
+      <p class="text-sm md:text-base text-ink/65 leading-relaxed mt-5">
+        Um registro das experiências, encontros, oficinas, construções,
+        plantios e acontecimentos que fizeram parte da trajetória da 2dM.
+      </p>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         LINHA DO TEMPO
+    ====================================================== -->
+
+    <section class="timeline pb-20">
+
+
+      <!-- =================================================
+           REGISTRO 01
+      ================================================== -->
+
+      <div class="relative grid md:grid-cols-2 gap-8 md:gap-16 mb-20">
+
+        <div class="md:text-right">
+
+          <span class="text-xs font-black text-gold uppercase tracking-wider">
+            2026 · início
+          </span>
+
+          <h3 class="font-black text-xl mt-2">
+            Primeiras experiências
+          </h3>
+
+          <p class="text-sm text-ink/60 mt-2 leading-relaxed">
+            Um novo ciclo de experimentações em tecnologia,
+            agroecologia e construção aberta.
+          </p>
+
+        </div>
+
+
+        <figure class="memory photo rotate-[-1deg]">
+
+          <img
+            src="COLOQUE-AQUI-O-IPFS"
+            alt="Registro da 2dM"
+            class="w-full h-auto object-cover"
+          >
+
+          <figcaption class="text-xs text-ink/55 pt-3 px-1 pb-1">
+            Registro de uma das primeiras atividades do ciclo.
+          </figcaption>
+
+        </figure>
+
+      </div>
+
+
+
+      <!-- =================================================
+           REGISTRO 02
+      ================================================== -->
+
+      <div class="relative grid md:grid-cols-2 gap-8 md:gap-16 mb-20">
+
+        <figure class="memory photo md:order-1 rotate-[1deg]">
+
+          <img
+            src="COLOQUE-AQUI-O-IPFS"
+            alt="Registro da 2dM"
+            class="w-full h-auto object-cover"
+          >
+
+          <figcaption class="text-xs text-ink/55 pt-3 px-1 pb-1">
+            Encontro, oficina ou atividade territorial.
+          </figcaption>
+
+        </figure>
+
+
+        <div class="md:order-2 md:pt-8">
+
+          <span class="text-xs font-black text-gold uppercase tracking-wider">
+            2026
+          </span>
+
+          <h3 class="font-black text-xl mt-2">
+            Encontros e oficinas
+          </h3>
+
+          <p class="text-sm text-ink/60 mt-2 leading-relaxed">
+            Momentos de troca de conhecimentos e construção coletiva.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =================================================
+           REGISTRO 03
+      ================================================== -->
+
+      <div class="relative grid md:grid-cols-2 gap-8 md:gap-16 mb-20">
+
+        <div class="md:text-right md:pt-10">
+
+          <span class="text-xs font-black text-gold uppercase tracking-wider">
+            2026
+          </span>
+
+          <h3 class="font-black text-xl mt-2">
+            Território e regeneração
+          </h3>
+
+          <p class="text-sm text-ink/60 mt-2 leading-relaxed">
+            Ações ligadas ao território, agrofloresta,
+            plantios e regeneração.
+          </p>
+
+        </div>
+
+
+        <figure class="memory photo rotate-[-2deg]">
+
+          <img
+            src="COLOQUE-AQUI-O-IPFS"
+            alt="Registro territorial da 2dM"
+            class="w-full h-auto object-cover"
+          >
+
+          <figcaption class="text-xs text-ink/55 pt-3 px-1 pb-1">
+            Registro territorial.
+          </figcaption>
+
+        </figure>
+
+      </div>
+
+
+
+      <!-- =================================================
+           REGISTRO 04
+      ================================================== -->
+
+      <div class="relative grid md:grid-cols-2 gap-8 md:gap-16 mb-20">
+
+        <figure class="memory photo md:order-1 rotate-[2deg]">
+
+          <img
+            src="COLOQUE-AQUI-O-IPFS"
+            alt="Protótipo desenvolvido pela 2dM"
+            class="w-full h-auto object-cover"
+          >
+
+          <figcaption class="text-xs text-ink/55 pt-3 px-1 pb-1">
+            Experimentação construtiva.
+          </figcaption>
+
+        </figure>
+
+
+        <div class="md:order-2 md:pt-12">
+
+          <span class="text-xs font-black text-gold uppercase tracking-wider">
+            2026
+          </span>
+
+          <h3 class="font-black text-xl mt-2">
+            Prototipação aberta
+          </h3>
+
+          <p class="text-sm text-ink/60 mt-2 leading-relaxed">
+            Testes, erros, adaptações e soluções construídas
+            a partir dos recursos disponíveis.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =================================================
+           REGISTRO 05
+      ================================================== -->
+
+      <div class="relative grid md:grid-cols-2 gap-8 md:gap-16 mb-20">
+
+        <div class="md:text-right md:pt-14">
+
+          <span class="text-xs font-black text-gold uppercase tracking-wider">
+            2026
+          </span>
+
+          <h3 class="font-black text-xl mt-2">
+            Novos caminhos
+          </h3>
+
+          <p class="text-sm text-ink/60 mt-2 leading-relaxed">
+            A trajetória continua sendo construída por pequenas
+            experiências conectadas entre si.
+          </p>
+
+        </div>
+
+
+        <figure class="memory photo max-w-md rotate-[-1deg]">
+
+          <img
+            src="COLOQUE-AQUI-O-IPFS"
+            alt="Registro da trajetória da 2dM"
+            class="w-full h-auto object-cover"
+          >
+
+          <figcaption class="text-xs text-ink/55 pt-3 px-1 pb-1">
+            A história permanece em construção.
+          </figcaption>
+
+        </figure>
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         VOLTAR
+    ====================================================== -->
+
+    <section class="border-t border-stone py-10 text-center">
+
+      <a
+        href="index.html"
+        class="inline-block bg-forest text-sand rounded px-5 py-3 text-xs font-bold uppercase tracking-wider hover:bg-ink transition"
+      >
+        ← Voltar ao catálogo
+      </a>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="border-t border-stone py-7">
+
+    <div class="max-w-6xl mx-auto px-5 text-center">
+
+      <p class="font-black text-sm">
+        2dM — Dois de Muitos
+      </p>
+
+      <p class="text-xs text-ink/50 mt-1">
+        Protótipos abertos · conhecimento compartilhado · impacto social
+      </p>
+
+    </div>
+
+  </footer>
+
+
+</body>
+
+</html>
+```
