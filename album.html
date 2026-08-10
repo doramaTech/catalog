@@ -1,0 +1,481 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>2dM — Álbum</title>
+
+  <meta
+    name="description"
+    content="Álbum visual da trajetória da 2dM — Dois de Muitos."
+  >
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link
+    rel="icon"
+    href="https://tan-secret-seahorse-725.mypinata.cloud/ipfs/bafybeidwsm3bi5np465uzeq27intkcgo6iexnu2t533trnmv7e6kw54q2e"
+  >
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: "#1e3a2a",
+            forest: "#274933",
+            gold: "#a38c4a",
+            sand: "#f3f0e6",
+            paper: "#f7f5ee",
+            stone: "#e8e4d8"
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f3f0e6;
+      color: #1e3a2a;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .scrap {
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .scrap:hover {
+      transform: scale(1.025) rotate(0deg) !important;
+      box-shadow: 0 16px 35px rgba(30, 58, 42, 0.14);
+      z-index: 10;
+    }
+
+    .photo {
+      background: #f7f5ee;
+      padding: 0.55rem;
+      border: 1px solid #e8e4d8;
+      box-shadow: 0 6px 18px rgba(30, 58, 42, 0.08);
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header class="max-w-6xl mx-auto px-5 py-6">
+
+    <div class="flex items-center justify-between">
+
+      <div class="flex items-center gap-3">
+
+        <div
+          class="h-10 w-10 rounded-lg bg-forest text-sand flex items-center justify-center font-black text-lg"
+        >
+          2dM
+        </div>
+
+        <div>
+
+          <h1 class="font-black text-xl leading-none">
+            Dois de Muitos
+          </h1>
+
+          <p class="text-xs text-ink/60 mt-1 uppercase tracking-widest">
+            Álbum
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <nav class="hidden sm:flex items-center gap-5">
+
+        <a
+          href="index.html"
+          class="text-xs font-bold uppercase tracking-wider hover:text-gold transition"
+        >
+          Protótipos
+        </a>
+
+        <a
+          href="realizacoes.html"
+          class="text-xs font-bold uppercase tracking-wider hover:text-gold transition"
+        >
+          Realizações
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <main class="max-w-6xl mx-auto px-5">
+
+
+    <!-- =====================================================
+         ABERTURA
+    ====================================================== -->
+
+    <section class="max-w-3xl mx-auto text-center pt-8 pb-16">
+
+      <p class="text-xs font-bold uppercase tracking-[0.18em] text-gold">
+        Memória visual
+      </p>
+
+      <h2 class="text-3xl md:text-5xl font-black mt-3">
+        Álbum
+      </h2>
+
+      <p class="text-sm md:text-base text-ink/65 leading-relaxed mt-5">
+        Fotografias, fragmentos e pequenos registros de uma trajetória
+        feita de encontros, experimentações e coisas que foram construídas
+        pelo caminho.
+      </p>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         MURAL
+    ====================================================== -->
+
+    <section class="pb-20">
+
+
+      <!-- FOTO 01 — GRANDE -->
+
+      <figure
+        class="scrap photo max-w-3xl mx-auto rotate-[-1deg]"
+      >
+
+        <img
+          src="COLOQUE-AQUI-O-IPFS"
+          alt="Registro da 2dM"
+          class="w-full h-auto object-cover"
+        >
+
+        <figcaption class="text-xs text-ink/55 pt-3 px-1 pb-1">
+          Um começo, um lugar, uma experiência.
+        </figcaption>
+
+      </figure>
+
+
+
+      <!-- FOTO 02 + 03 -->
+
+      <div class="grid md:grid-cols-2 gap-10 md:gap-20 mt-20">
+
+        <figure
+          class="scrap photo rotate-[2deg] md:mt-8"
+        >
+
+          <img
+            src="COLOQUE-AQUI-O-IPFS"
+            alt="Registro da 2dM"
+            class="w-full h-auto object-cover"
+          >
+
+          <figcaption class="text-xs text-ink/55 pt-3 px-1 pb-1">
+            Trabalho compartilhado.
+          </figcaption>
+
+        </figure>
+
+
+        <figure
+          class="scrap photo rotate-[-2deg]"
+        >
+
+          <img
+            src="COLOQUE-AQUI-O-IPFS"
+            alt="Registro da 2dM"
+            class="w-full h-auto object-cover"
+          >
+
+          <figcaption class="text-xs text-ink/55 pt-3 px-1 pb-1">
+            Fazer junto.
+          </figcaption>
+
+        </figure>
+
+      </div>
+
+
+
+      <!-- FOTO 04 — MÉDIA -->
+
+      <figure
+        class="scrap photo max-w-xl mx-auto mt-24 rotate-[1deg]"
+      >
+
+        <img
+          src="COLOQUE-AQUI-O-IPFS"
+          alt="Registro da 2dM"
+          class="w-full h-auto object-cover"
+        >
+
+        <figcaption class="text-xs text-ink/55 pt-3 px-1 pb-1">
+          Entre ferramentas, matéria e território.
+        </figcaption>
+
+      </figure>
+
+
+
+      <!-- BLOCO DE FOTOS MENORES -->
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-8 mt-24">
+
+        <figure class="scrap photo rotate-[-2deg]">
+
+          <img
+            src="COLOQUE-AQUI-O-IPFS"
+            alt="Registro"
+            class="w-full aspect-[4/3] object-cover"
+          >
+
+          <figcaption class="text-[11px] text-ink/55 pt-2 px-1 pb-1">
+            detalhe
+          </figcaption>
+
+        </figure>
+
+
+        <figure class="scrap photo rotate-[1deg] mt-6">
+
+          <img
+            src="COLOQUE-AQUI-O-IPFS"
+            alt="Registro"
+            class="w-full aspect-[4/3] object-cover"
+          >
+
+          <figcaption class="text-[11px] text-ink/55 pt-2 px-1 pb-1">
+            encontro
+          </figcaption>
+
+        </figure>
+
+
+        <figure class="scrap photo rotate-[2deg]">
+
+          <img
+            src="COLOQUE-AQUI-O-IPFS"
+            alt="Registro"
+            class="w-full aspect-[4/3] object-cover"
+          >
+
+          <figcaption class="text-[11px] text-ink/55 pt-2 px-1 pb-1">
+            processo
+          </figcaption>
+
+        </figure>
+
+
+        <figure class="scrap photo rotate-[-1deg] mt-5">
+
+          <img
+            src="COLOQUE-AQUI-O-IPFS"
+            alt="Registro"
+            class="w-full aspect-[4/3] object-cover"
+          >
+
+          <figcaption class="text-[11px] text-ink/55 pt-2 px-1 pb-1">
+            território
+          </figcaption>
+
+        </figure>
+
+      </div>
+
+
+
+      <!-- =================================================
+           MAIS FRAGMENTOS
+      ================================================== -->
+
+      <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3 md:gap-5 mt-20">
+
+        <figure class="scrap photo rotate-[1deg]">
+
+          <img
+            src="COLOQUE-AQUI-O-IPFS"
+            alt="Registro"
+            class="w-full aspect-square object-cover"
+          >
+
+          <figcaption class="text-[9px] text-ink/50 pt-2 px-1 pb-1">
+            01
+          </figcaption>
+
+        </figure>
+
+
+        <figure class="scrap photo rotate-[-2deg] mt-4">
+
+          <img
+            src="COLOQUE-AQUI-O-IPFS"
+            alt="Registro"
+            class="w-full aspect-square object-cover"
+          >
+
+          <figcaption class="text-[9px] text-ink/50 pt-2 px-1 pb-1">
+            02
+          </figcaption>
+
+        </figure>
+
+
+        <figure class="scrap photo rotate-[2deg]">
+
+          <img
+            src="COLOQUE-AQUI-O-IPFS"
+            alt="Registro"
+            class="w-full aspect-square object-cover"
+          >
+
+          <figcaption class="text-[9px] text-ink/50 pt-2 px-1 pb-1">
+            03
+          </figcaption>
+
+        </figure>
+
+
+        <figure class="scrap photo rotate-[-1deg] mt-3">
+
+          <img
+            src="COLOQUE-AQUI-O-IPFS"
+            alt="Registro"
+            class="w-full aspect-square object-cover"
+          >
+
+          <figcaption class="text-[9px] text-ink/50 pt-2 px-1 pb-1">
+            04
+          </figcaption>
+
+        </figure>
+
+
+        <figure class="scrap photo rotate-[2deg]">
+
+          <img
+            src="COLOQUE-AQUI-O-IPFS"
+            alt="Registro"
+            class="w-full aspect-square object-cover"
+          >
+
+          <figcaption class="text-[9px] text-ink/50 pt-2 px-1 pb-1">
+            05
+          </figcaption>
+
+        </figure>
+
+
+        <figure class="scrap photo rotate-[-2deg] mt-5">
+
+          <img
+            src="COLOQUE-AQUI-O-IPFS"
+            alt="Registro"
+            class="w-full aspect-square object-cover"
+          >
+
+          <figcaption class="text-[9px] text-ink/50 pt-2 px-1 pb-1">
+            06
+          </figcaption>
+
+        </figure>
+
+      </div>
+
+
+
+      <!-- =================================================
+           ENCERRAMENTO
+      ================================================== -->
+
+      <div class="text-center mt-24">
+
+        <p class="text-xs font-bold uppercase tracking-[0.18em] text-gold">
+          continua
+        </p>
+
+        <p class="text-sm text-ink/55 mt-3">
+          Este álbum permanece aberto.
+        </p>
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         VOLTAR
+    ====================================================== -->
+
+    <section class="border-t border-stone py-10 text-center">
+
+      <a
+        href="index.html"
+        class="inline-block bg-forest text-sand rounded px-5 py-3 text-xs font-bold uppercase tracking-wider hover:bg-ink transition"
+      >
+        ← Voltar ao catálogo
+      </a>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="border-t border-stone py-7">
+
+    <div class="max-w-6xl mx-auto px-5 text-center">
+
+      <p class="font-black text-sm">
+        2dM — Dois de Muitos
+      </p>
+
+      <p class="text-xs text-ink/50 mt-1">
+        Protótipos abertos · conhecimento compartilhado · impacto social
+      </p>
+
+    </div>
+
+  </footer>
+
+
+</body>
+
+</html>
+```
